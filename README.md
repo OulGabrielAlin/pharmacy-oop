@@ -1,4 +1,3 @@
-# lab2_4
 **Gestiune farmacie**
 
 Administratorul unei farmacii are nevoie de o aplicatie care permite gestiunea stocului din farmacie.  
