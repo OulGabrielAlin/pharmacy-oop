@@ -1,4 +1,4 @@
-**Gestiune farmacie**
+# Gestiune farmacie
 
 Administratorul unei farmacii are nevoie de o aplicatie care permite gestiunea stocului din farmacie.  
 Fiecare medicament din stoc are un cod unic, un nume,concentratie, cantitate disponibila in stoc.  
