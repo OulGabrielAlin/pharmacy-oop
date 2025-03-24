@@ -1,0 +1,15 @@
+# ninja log v6
+37	917	7645572077248844	CMakeFiles/Lab5.dir/Controller/mysort.c.obj	a7cd7d49be801c98
+71	981	7645572077592845	CMakeFiles/Lab5.dir/Tests/run_tests.c.obj	3c8f484899012d1e
+62	1201	7645572077512022	CMakeFiles/Lab5.dir/Repository/repository.c.obj	4d61bc7a159a79a1
+7	1013	7645572076948827	CMakeFiles/Lab5.dir/main.c.obj	a80d579d51321788
+44	1041	7645572077318795	CMakeFiles/Lab5.dir/Controller/service.c.obj	596cde957a149591
+1013	1297	7645572087011104	CMakeFiles/Lab5.dir/Validator/validator.c.obj	e3d86f72411f5d63
+81	1184	7645572077693792	CMakeFiles/Lab5.dir/Tests/teste_domain.c.obj	e42b7e7af5ceb855
+104	1240	7645572077929191	CMakeFiles/Lab5.dir/Tests/teste_repo.c.obj	bd3e394d367e0f30
+53	1055	7645572077411182	CMakeFiles/Lab5.dir/Domain/medicament.c.obj	5abd783af7b31056
+90	1275	7645572077783881	CMakeFiles/Lab5.dir/Tests/teste_list.c.obj	2e63aa51826d1979
+983	1295	7645572086715779	CMakeFiles/Lab5.dir/Utils/list.c.obj	a58109203adfc0dd
+919	1307	7645572086073804	CMakeFiles/Lab5.dir/UI/console.c.obj	e00f8285fece18c0
+113	1317	7645572078019192	CMakeFiles/Lab5.dir/Tests/teste_service.c.obj	c4fefc169c18658e
+1317	1656	7645572090050185	Lab5.exe	490193d88a1c8d3e

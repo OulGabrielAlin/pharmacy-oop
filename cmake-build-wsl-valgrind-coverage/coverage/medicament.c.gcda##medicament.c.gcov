@@ -1,0 +1,102 @@
+        -:    0:Source:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/Domain/medicament.c
+        -:    0:Graph:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcno
+        -:    0:Data:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "medicament.h"
+        -:    2:#include <stdio.h>
+        -:    3:#include <string.h>
+        -:    4:#include <stdlib.h>
+        -:    5:
+        -:    6:/* Creeaza un obiect de tip medicament
+        -:    7:*  cod: codul medicamentului (numar intreg)
+        -:    8:*  nume: numele medicamentului
+        -:    9:*  concentratie: concentratia medicamentului (numar rational)
+        -:   10:*  cantitate: cantitatea medicamentului (numar intreg)
+        -:   11:*/
+function creeaza_medicament called 60 returned 100% blocks executed 50%
+       60:   12:Medicament* creeaza_medicament(int cod, char nume[], float concentratie, int cantitate)
+        -:   13:{
+       60:   14:	Medicament* m = malloc(sizeof(Medicament));
+       60:   15:	if (m == NULL)
+       60:   15-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 60
+        -:   16:	{
+    #####:   17:		perror("Couldn't find memory");
+    %%%%%:   17-block  0
+call    0 never executed
+    #####:   18:		return NULL;
+        -:   19:	}
+        -:   20:
+       60:   21:	m->nume = malloc(sizeof(char) * (strlen(nume) + 1));
+        -:   22:
+       60:   23:	if (m->nume == NULL)
+       60:   23-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 60
+        -:   24:	{
+    #####:   25:		perror("Couldn't find memory");
+    %%%%%:   25-block  0
+call    0 never executed
+    #####:   26:		return NULL;
+        -:   27:	}
+        -:   28:
+       60:   29:	m->cod = cod;
+       60:   30:	strcpy(m->nume, nume);
+       60:   31:	m->concentratie = concentratie;
+       60:   32:	m->cantitate = cantitate;
+        -:   33:
+       60:   34:	return m;
+       60:   34-block  0
+        -:   35:}
+        -:   36:
+        -:   37:/* Returneaza o copie independenta a medicamentului dat
+        -:   38:*  m: medicamentul dat
+        -:   39:*  return: o copie
+        -:   40:*/
+function copiaza_medicament called 4 returned 100% blocks executed 50%
+        4:   41:Medicament* copiaza_medicament(Medicament* m)
+        -:   42:{
+        4:   43:	Medicament* med = malloc(sizeof(Medicament));
+        4:   44:	if (med == NULL)
+        4:   44-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+        -:   45:	{
+    #####:   46:		perror("Couldn't allocate memory");
+    %%%%%:   46-block  0
+call    0 never executed
+    #####:   47:		return NULL;
+        -:   48:	}
+        -:   49:	
+        4:   50:	med->cod = m->cod;
+        4:   51:	med->concentratie = m->concentratie;
+        4:   52:	med->cantitate = m->cantitate;
+        -:   53:
+        4:   54:	med->nume = malloc(sizeof(char) * (strlen(m->nume) + 1));
+        4:   55:	if (med->nume == NULL)
+        4:   55-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+        -:   56:	{
+    #####:   57:		perror("Couldn't allocate memory");
+    %%%%%:   57-block  0
+call    0 never executed
+    #####:   58:		return NULL;
+        -:   59:	}
+        -:   60:
+        4:   61:	strcpy(med->nume, m->nume);
+        -:   62:
+        4:   63:	return med;
+        4:   63-block  0
+        -:   64:}
+        -:   65:
+        -:   66:/* Elibereaza memoria ocupata de un medicament
+        -:   67:*  post: medicamentul este distrus
+        -:   68:*/
+function distruge_medicament called 64 returned 100% blocks executed 100%
+       64:   69:void distruge_medicament(Medicament* m)
+        -:   70:{
+       64:   71:	free(m->nume);
+       64:   72:	free(m);
+       64:   73:}

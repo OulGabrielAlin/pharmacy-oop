@@ -1,0 +1,56 @@
+        -:    0:Source:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/Controller/mysort.c
+        -:    0:Graph:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcno
+        -:    0:Data:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "mysort.h"
+        -:    2:
+        -:    3:/* Sorteaza o lista data crescator sau descrescator dupa un criteriu dat
+        -:    4:*/
+function sort called 2 returned 100% blocks executed 100%
+        2:    5:void sort(List* list, FunctieComparare func, int crescator)
+        -:    6:{
+       14:    7:	for (int i = 0; i < list->size - 1; i++)
+        2:    7-block  0
+       12:    7-block  1
+       14:    7-block  2
+branch  0 taken 12
+branch  1 taken 2 (fallthrough)
+       54:    8:		for (int j = i + 1; j < list->size; j++)
+       12:    8-block  0
+       42:    8-block  1
+       54:    8-block  2
+branch  0 taken 42
+branch  1 taken 12 (fallthrough)
+       42:    9:			if (crescator)
+       42:    9-block  0
+branch  0 taken 21 (fallthrough)
+branch  1 taken 21
+        -:   10:			{
+       21:   11:				if (func(list->elems[j], list->elems[i]) != 0)
+       21:   11-block  0
+call    0 returned 21
+branch  1 taken 11 (fallthrough)
+branch  2 taken 10
+        -:   12:				{
+       11:   13:					Medicament* aux = list->elems[j];
+       11:   14:					list->elems[j] = list->elems[i];
+       11:   15:					list->elems[i] = aux;
+       11:   15-block  0
+        -:   16:				}
+        -:   17:			}
+        -:   18:			else
+        -:   19:			{
+       21:   20:				if (func(list->elems[i], list->elems[j]) != 0)
+       21:   20-block  0
+call    0 returned 21
+branch  1 taken 10 (fallthrough)
+branch  2 taken 11
+        -:   21:				{
+       10:   22:					Medicament* aux = list->elems[j];
+       10:   23:					list->elems[j] = list->elems[i];
+       10:   24:					list->elems[i] = aux;
+       10:   24-block  0
+        -:   25:				}
+        -:   26:			}
+        -:   27:				
+        2:   28:}

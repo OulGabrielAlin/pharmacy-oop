@@ -1,1 +1,4 @@
-CMakeLists.txt not found in D:\Info_Facultate\Semestrul_2\OOP\Lab5 Select CMakeLists.txt
+/usr/bin/cmake -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage -G "Unix Makefiles" -S /mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5 -B /mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage

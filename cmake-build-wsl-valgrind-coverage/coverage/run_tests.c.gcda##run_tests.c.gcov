@@ -1,0 +1,42 @@
+        -:    0:Source:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/Tests/run_tests.c
+        -:    0:Graph:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcno
+        -:    0:Data:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "teste_domain.h"
+        -:    2:#include "teste_list.h"
+        -:    3:#include "teste_repo.h"
+        -:    4:#include "teste_service.h"
+        -:    5:
+function run_tests called 1 returned 100% blocks executed 100%
+        1:    6:void run_tests()
+        -:    7:{
+        1:    8:	test_medicament();
+        1:    8-block  0
+call    0 returned 1
+        1:    9:	test_validare();
+call    0 returned 1
+        1:   10:	test_add();
+call    0 returned 1
+        1:   11:	test_delete();
+call    0 returned 1
+        1:   12:	test_store();
+call    0 returned 1
+        1:   13:	test_update();
+call    0 returned 1
+        1:   14:	test_find();
+call    0 returned 1
+        1:   15:	test_erase();
+call    0 returned 1
+        1:   16:	test_adauga_medicament();
+call    0 returned 1
+        1:   17:	test_modifica_medicament();
+call    0 returned 1
+        1:   18:    test_sterge_medicament();
+call    0 returned 1
+        1:   19:	test_sorteaza_medicamente();
+call    0 returned 1
+        1:   20:	test_filtreaza_dupa_cantitate();
+call    0 returned 1
+        1:   21:	test_filtreaza_dupa_nume();
+call    0 returned 1
+        1:   22:}
