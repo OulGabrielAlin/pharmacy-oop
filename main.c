@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "UI/console.h"
 
 int main()

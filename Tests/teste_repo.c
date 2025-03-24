@@ -1,8 +1,9 @@
 #include "teste_repo.h"
-#include "repository.h"
-#include "medicament.h"
+#include "../Repository/repository.h"
+#include "../Domain/medicament.h"
 #include "math.h"
 #include <assert.h>
+#include <string.h>
 #include "teste_list.h"
 #include <stdlib.h>
 

@@ -1,7 +1,7 @@
 #include "teste_domain.h"
 #include <assert.h>
-#include "medicament.h"
-#include "validator.h"
+#include "../Domain/medicament.h"
+#include "../Validator/validator.h"
 #include <string.h>
 #include <stdio.h>
 #include <math.h>

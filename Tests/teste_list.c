@@ -1,5 +1,6 @@
 #include "teste_list.h"
-#include "list.h"
+#include "../Utils/list.h"
+#include "../Domain/medicament.h"
 #include <string.h>
 #include <math.h>
 #include <assert.h>

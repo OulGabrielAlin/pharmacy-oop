@@ -1,0 +1,136 @@
+        -:    0:Source:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/Utils/list.c
+        -:    0:Graph:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcno
+        -:    0:Data:/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "list.h"
+        -:    2:#include <stdlib.h>
+        -:    3:#include <stdio.h>
+        -:    4:#include <string.h>
+        -:    5:#include "../Domain/medicament.h"
+        -:    6:
+        -:    7:
+        -:    8:/* Creaza un obiect de tip lista
+        -:    9:*  return: o lista fara elemente
+        -:   10:*/ 
+function creeaza_lista called 15 returned 100% blocks executed 50%
+       15:   11:List* creeaza_lista()
+        -:   12:{
+       15:   13:	List* list = malloc(sizeof(List));
+       15:   14:	if (list == NULL)
+       15:   14-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 15
+        -:   15:	{
+    #####:   16:		perror("Couldn't find memory");
+    %%%%%:   16-block  0
+call    0 never executed
+    #####:   17:		return NULL;
+        -:   18:	}
+        -:   19:
+       15:   20:	list->size = 0;
+       15:   21:	list->cap = 2;
+       15:   22:	list->elems = malloc(sizeof(TElem) * list->cap);
+       15:   23:	if (list->elems == NULL)
+       15:   23-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 15
+        -:   24:	{
+    #####:   25:		perror("Couldn't find memory");
+    %%%%%:   25-block  0
+call    0 never executed
+    #####:   26:		return NULL;
+        -:   27:	}
+       15:   28:	return list;
+       15:   28-block  0
+        -:   29:}
+        -:   30:
+        -:   31:/* Adauga un medicament la lista
+        -:   32:*  list: lista curenta
+        -:   33:*  m: medicamentul adaugat
+        -:   34:*/
+function add called 57 returned 100% blocks executed 80%
+       57:   35:void add(List* list, TElem m)
+        -:   36:{
+       57:   37:	if (list->size == list->cap)
+       57:   37-block  0
+branch  0 taken 12 (fallthrough)
+branch  1 taken 45
+        -:   38:	{
+       12:   39:		list->cap *= 2;
+       12:   40:		TElem* new_list = malloc(sizeof(TElem) * list->cap);
+       12:   41:		if (new_list == NULL)
+       12:   41-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 12
+        -:   42:		{
+    #####:   43:			perror("Couldn't allocate more memory");
+    %%%%%:   43-block  0
+call    0 never executed
+    #####:   44:			return;
+        -:   45:		}
+        -:   46:
+       52:   47:		for (int i = 0; i < list->size; i++)
+       12:   47-block  0
+       52:   47-block  1
+branch  0 taken 40
+branch  1 taken 12 (fallthrough)
+       40:   48:			new_list[i] = list->elems[i];
+       40:   48-block  0
+        -:   49:
+       12:   50:		free(list->elems);
+       12:   51:		list->elems = new_list;
+       12:   51-block  0
+        -:   52:	}
+        -:   53:
+       57:   54:	list->elems[list->size] = m;
+       57:   55:	++(list->size);
+       57:   55-block  0
+        -:   56:}
+        -:   57:
+        -:   58:/* Sterge un medicament din lista dupa pozitie
+        -:   59:*  list: lista curenta
+        -:   60:*  poz: pozitia data
+        -:   61:*/
+function delete called 13 returned 100% blocks executed 100%
+       13:   62:void delete(List* list, int poz)
+        -:   63:{
+       13:   64:	if (poz >= list->size)
+       13:   64-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 12
+        1:   65:		return;
+        1:   65-block  0
+        -:   66:
+       12:   67:	distruge_medicament(list->elems[poz]);
+       12:   67-block  0
+call    0 returned 12
+        -:   68:
+       26:   69:	for (int i = poz; i < list->size - 1; i++)
+       26:   69-block  0
+branch  0 taken 14
+branch  1 taken 12 (fallthrough)
+       14:   70:		list->elems[i] = list->elems[i + 1];
+       14:   70-block  0
+        -:   71:	
+        -:   72:
+       12:   73:	--(list->size);
+       12:   73-block  0
+        -:   74:}
+        -:   75:
+        -:   76:/* Elibereaza memoria ocupata de lista
+        -:   77:*  post: lista este distrusa
+        -:   78:*/
+function destroy_list called 15 returned 100% blocks executed 100%
+       15:   79:void destroy_list(List* list)
+        -:   80:{
+       60:   81:	for (int i = 0; i < list->size; i++)
+       15:   81-block  0
+       60:   81-block  1
+branch  0 taken 45
+branch  1 taken 15 (fallthrough)
+       45:   82:		distruge_medicament(list->elems[i]);
+       45:   82-block  0
+call    0 returned 45
+       15:   83:	free(list->elems);
+       15:   84:	free(list);
+       15:   85:}

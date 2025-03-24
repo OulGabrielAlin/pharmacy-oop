@@ -1,11 +1,11 @@
 #include "teste_service.h"
-#include "repository.h"
-#include "service.h"
+#include "../Repository/repository.h"
+#include "../Controller/service.h"
 #include "string.h"
 #include "assert.h"
 #include "math.h"
 #include <stdio.h>
-#include "mysort.h"
+#include "../Controller/mysort.h"
 
 void test_adauga_medicament()
 {
