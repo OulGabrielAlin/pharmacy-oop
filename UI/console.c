@@ -4,6 +4,7 @@
 #include "string.h"
 #include "../Tests/run_tests.h"
 #include <stdlib.h>
+#include <ctype.h>
 
 /* Creeaza un obiect de tip consola
 *  return: consola cu service de medicamente
@@ -56,7 +57,7 @@ void afiseaza_meniu()
 */
 void afiseaza_medicament(Medicament* m)
 {
-	printf("Nume: %s\nConcentratie: %.2lf\nCantitate: %d\n", m->nume, m->concentratie, m->cantitate);
+	printf("Cod: %d\nNume: %s\nConcentratie: %.2lf\nCantitate: %d\n", m->cod, m->nume, m->concentratie, m->cantitate);
 }
 
 /* Sorteaza lista pe baza datelor citite
@@ -159,7 +160,7 @@ void adauga_medicament_ui(Consola* consola)
 	if (strlen(errors) > 0)
 	{
 		printf("\n---------------------------\n");
-		printf(errors);
+		printf("%s", errors);
 		printf("---------------------------\n");
 	}
 }
@@ -205,7 +206,7 @@ void modifica_medicament_ui(Consola* consola)
 	if (strlen(errors) > 0)
 	{
 		printf("\n---------------------------\n");
-		printf(errors);
+		printf("%s", errors);
 		printf("---------------------------\n");
 	}
 }

@@ -94,9 +94,9 @@ call    0 never executed
         -:   66:/* Elibereaza memoria ocupata de un medicament
         -:   67:*  post: medicamentul este distrus
         -:   68:*/
-function distruge_medicament called 64 returned 100% blocks executed 100%
-       64:   69:void distruge_medicament(Medicament* m)
+function distruge_medicament called 53 returned 100% blocks executed 100%
+       53:   69:void distruge_medicament(Medicament* m)
         -:   70:{
-       64:   71:	free(m->nume);
-       64:   72:	free(m);
-       64:   73:}
+       53:   71:	free(m->nume);
+       53:   72:	free(m);
+       53:   73:}

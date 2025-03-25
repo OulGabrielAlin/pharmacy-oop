@@ -3,6 +3,7 @@
 #include "../Repository/repository.h"
 #include "string.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include "mysort.h"
 
 /* Creeaza un obiect de tip serviciu pentru medicamente

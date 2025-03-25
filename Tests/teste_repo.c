@@ -4,9 +4,8 @@
 #include "math.h"
 #include <assert.h>
 #include <string.h>
-#include "teste_list.h"
-#include <stdlib.h>
 
+// functie de test pentru functia store (repo)
 void test_store()
 {
 	Repo* repo = creeaza_repo();
@@ -39,6 +38,7 @@ void test_store()
 	distruge_repo(repo);
 }
 
+// functie de test pentru functia update (repo)
 void test_update()
 {
 	Repo* repo = creeaza_repo();
@@ -58,6 +58,7 @@ void test_update()
 	distruge_repo(repo);
 }
 
+// functie de test pentru functia find (repo)
 void test_find()
 {
 	Repo* repo = creeaza_repo();
@@ -79,6 +80,7 @@ void test_find()
 	distruge_repo(repo);
 }
 
+// functie de test pentru functia erase (repo)
 void test_erase()
 {
 	Repo* repo = creeaza_repo();

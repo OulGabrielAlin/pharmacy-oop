@@ -1,6 +1,7 @@
 #include "repository.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 /*Creeaza un obiect de tip repository pentru medicamente
   return: un repository care nu contine elemente
@@ -30,7 +31,10 @@ void store(Repo* repo, Medicament* m)
 	int poz = find(repo, m->cod);
 	if (poz != -1)
 	{
-		((Medicament*)(repo->lista_med->elems[poz]))->cantitate += m->cantitate;
+		if (strcmp(m->nume, ((Medicament*)(repo->lista_med->elems[poz]))->nume) == 0 &&
+			((Medicament*)(repo->lista_med->elems[poz]))->concentratie == m->concentratie) {
+			((Medicament*)(repo->lista_med->elems[poz]))->cantitate += m->cantitate;
+		}
 		distruge_medicament(m);
 		return;
 	}

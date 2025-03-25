@@ -7,12 +7,13 @@
 #include <stdio.h>
 #include "../Controller/mysort.h"
 
+// functie de test pentru adauga_medicament (service)
 void test_adauga_medicament()
 {
 	ServiceMed* service = creeaza_serviciu();
 	assert(service->repo->lista_med->size== 0);
 
-	char errors[200] = "";
+	char errors[250] = "";
 	adauga_medicament(service, 101, "Paracetamol", 12.3, 10, errors);
 	assert(((Medicament*)service->repo->lista_med->elems[0])->cod == 101);
 	assert(strcmp(((Medicament*)service->repo->lista_med->elems[0])->nume, "Paracetamol") == 0);
@@ -43,10 +44,15 @@ void test_adauga_medicament()
 	strcpy(errors, "");
 	adauga_medicament(service, -1, "Paracetamol", 100, -1, errors);
 	assert(strcmp(errors, "Codul trebuie sa aiba o valoare mai mare ca 0\nConcentratia trebuie sa aiba o valoare in intervalul (0, 100)\nCantitatea trebuie sa fie un numar intreg pozitiv\n") == 0);
-	
+
+	strcpy(errors, "");
+	adauga_medicament(service, -2, "", 100, -1, errors);
+	assert(strcmp(errors, "Codul trebuie sa aiba o valoare mai mare ca 0\nConcentratia trebuie sa aiba o valoare in intervalul (0, 100)\nCantitatea trebuie sa fie un numar intreg pozitiv\nTrebuie sa introduceti un nume pentru medicament\n") == 0);
+
 	distruge_serviciu(service);
 }
 
+// functie de test pentru modifica_medicament (service)
 void test_modifica_medicament()
 {
 	ServiceMed* service = creeaza_serviciu();
@@ -81,6 +87,7 @@ void test_modifica_medicament()
 	distruge_serviciu(service);
 }
 
+// functie de test pentru sterge_medicament (service)
 void test_sterge_medicament()
 {
 	ServiceMed* service = creeaza_serviciu();
@@ -109,6 +116,7 @@ void test_sterge_medicament()
 	distruge_serviciu(service);
 }
 
+// functie de test pentru sorteaza_medicamente (service)
 void test_sorteaza_medicamente()
 {
 	ServiceMed* service = creeaza_serviciu();
@@ -162,6 +170,7 @@ void test_sorteaza_medicamente()
 	distruge_serviciu(service);
 }
 
+// functie de test pentru filtreaza_dupa_cantitate (service)
 void test_filtreaza_dupa_cantitate()
 {
 	ServiceMed* service = creeaza_serviciu();
@@ -184,6 +193,7 @@ void test_filtreaza_dupa_cantitate()
 	distruge_serviciu(service);
 }
 
+// functie de test pentru filtreaza_dupa_nume (service)
 void test_filtreaza_dupa_nume()
 {
 	ServiceMed* service = creeaza_serviciu();

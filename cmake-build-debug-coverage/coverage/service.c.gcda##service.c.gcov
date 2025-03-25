@@ -48,14 +48,14 @@ call    0 never executed
         -:   31:/* Elibereaza memoria ocupata de serviciu
         -:   32:*  post: serviciul este distrus
         -:   33:*/
-function distruge_serviciu called 7 returned 100% blocks executed 100%
-        7:   34:void distruge_serviciu(ServiceMed* service)
+function distruge_serviciu called 6 returned 100% blocks executed 100%
+        6:   34:void distruge_serviciu(ServiceMed* service)
         -:   35:{
-        7:   36:	distruge_repo(service->repo);
-        7:   36-block  0
-call    0 returned 7
-        7:   37:	free(service);
-        7:   38:}
+        6:   36:	distruge_repo(service->repo);
+        6:   36-block  0
+call    0 returned 6
+        6:   37:	free(service);
+        6:   38:}
         -:   39:
         -:   40:/* Adauga un medicament la lista de medicamente pe baza datelor citite
         -:   41:*  service: serviciul de medicamente curent

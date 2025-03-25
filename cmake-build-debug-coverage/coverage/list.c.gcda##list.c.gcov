@@ -120,17 +120,17 @@ branch  1 taken 12 (fallthrough)
         -:   76:/* Elibereaza memoria ocupata de lista
         -:   77:*  post: lista este distrusa
         -:   78:*/
-function destroy_list called 15 returned 100% blocks executed 100%
-       15:   79:void destroy_list(List* list)
+function destroy_list called 14 returned 100% blocks executed 100%
+       14:   79:void destroy_list(List* list)
         -:   80:{
-       60:   81:	for (int i = 0; i < list->size; i++)
-       15:   81-block  0
-       60:   81-block  1
-branch  0 taken 45
-branch  1 taken 15 (fallthrough)
-       45:   82:		distruge_medicament(list->elems[i]);
-       45:   82-block  0
-call    0 returned 45
-       15:   83:	free(list->elems);
-       15:   84:	free(list);
-       15:   85:}
+       48:   81:	for (int i = 0; i < list->size; i++)
+       14:   81-block  0
+       48:   81-block  1
+branch  0 taken 34
+branch  1 taken 14 (fallthrough)
+       34:   82:		distruge_medicament(list->elems[i]);
+       34:   82-block  0
+call    0 returned 34
+       14:   83:	free(list->elems);
+       14:   84:	free(list);
+       14:   85:}
