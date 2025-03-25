@@ -33,115 +33,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4cde33b-661d-4322-be98-cacab5448188" name="Changes" comment="Trying to Merge Master with this branch">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cmakeFiles-v1-8d98bbdce85510695b0b.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-3492c441422c38e5a0ab.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Controller/service.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Repository/repository.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/UI/console.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Validator/validator.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/main.c.gcno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cmakeFiles-v1-6392184a0abe1a591e6e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2025-03-25T21-27-03-0743.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2025-03-25T21-53-18-0289.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.30.5/CompilerIdC/a-CMakeCCompilerId.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.30.5/CompilerIdC/a-CMakeCCompilerId.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.30.5/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.30.5/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Controller/mysort.c.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Domain/medicament.c.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab5.dir/Utils/list.c.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/main.c.gcda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab5.dir/main.c.gcno" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cmakeFiles-v1-6392184a0abe1a591e6e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-aca0080bec54aef864e1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cmakeFiles-v1-8d98bbdce85510695b0b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2025-03-25T21-53-18-0289.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2025-03-25T22-01-51-0166.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/clion-Debug-Coverage-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/clion-Debug-Coverage-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/Lab5.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Lab5.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/console.c.gcda##console.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/console.c.gcda##console.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/console.c.gcda##stdio.h.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/console.c.gcda##stdio.h.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/list.c.gcda##list.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/list.c.gcda##list.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/main.c.gcda##main.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/main.c.gcda##main.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/medicament.c.gcda##medicament.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/medicament.c.gcda##medicament.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/repository.c.gcda##repository.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/repository.c.gcda##repository.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/service.c.gcda##service.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/service.c.gcda##service.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-aca0080bec54aef864e1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-03-25T21-27-03-0774.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-03-25T21-53-18-0244.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-3492c441422c38e5a0ab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-03-25T21-53-18-0244.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-03-25T22-01-51-0182.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab5.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab5.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/.cmake/api/v1/reply/index-2025-03-25T21-27-03-0788.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/.cmake/api/v1/reply/index-2025-03-25T21-53-16-0317.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcda" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/.cmake/api/v1/reply/index-2025-03-25T21-53-16-0317.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/.cmake/api/v1/reply/index-2025-03-25T22-01-51-0195.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/clion-WSL-Valgrind-Coverage-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/clion-WSL-Valgrind-Coverage-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/Lab5" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/Lab5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind/.cmake/api/v1/reply/index-2025-03-25T21-27-03-0789.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind/.cmake/api/v1/reply/index-2025-03-25T21-53-16-0354.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind/.cmake/api/v1/reply/index-2025-03-25T21-53-16-0354.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind/.cmake/api/v1/reply/index-2025-03-25T22-01-51-0207.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind/CMakeFiles/clion-WSL-Valgrind-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind/CMakeFiles/clion-WSL-Valgrind-log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +135,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.Lab5.executor": "Coverage",
+    "CMake Application.Lab5.executor": "Valgrind",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
