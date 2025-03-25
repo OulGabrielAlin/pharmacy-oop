@@ -3,6 +3,7 @@
 #include "teste_repo.h"
 #include "teste_service.h"
 
+// functie care ruleaza toate functiile de test (din domain, validator, repository, list, service)
 void run_tests()
 {
 	test_medicament();

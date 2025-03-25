@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Lab5::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Lab5-Debug-687baec4de11db15d962.json",
+					"jsonFile" : "target-Lab5-Debug-4fae09b930f38aa5fc39.json",
 					"name" : "Lab5",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-debug-coverage",
+		"build" : "D:/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-debug",
 		"source" : "D:/Info_Facultate/Semestrul_2/OOP/Lab5"
 	},
 	"version" : 

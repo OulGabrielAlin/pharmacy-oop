@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 
+// functie de test pentru creeaza_medicament
 void test_medicament()
 {
 	Medicament* m = creeaza_medicament(1, "Paracetamol", 11.10, 10);
@@ -20,6 +21,7 @@ void test_medicament()
 	distruge_medicament(m);
 }
 
+// functie de test pentru functia valideaza
 void test_validare()
 {
 	char errors[200] = "";

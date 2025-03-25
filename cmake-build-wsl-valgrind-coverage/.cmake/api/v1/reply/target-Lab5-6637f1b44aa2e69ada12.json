@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Lab5.exe"
-		},
-		{
-			"path" : "Lab5.pdb"
+			"path" : "Lab5"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -38,7 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "--coverage -g -std=gnu2x -fdiagnostics-color=always"
+					"fragment" : "--coverage -g -Wall -Wextra -std=gnu2x -fdiagnostics-color=always"
 				}
 			],
 			"language" : "C",
@@ -74,22 +71,18 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "--coverage -g",
+				"fragment" : "--coverage -g -Wall -Wextra",
 				"role" : "flags"
 			},
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
 	"name" : "Lab5",
-	"nameOnDisk" : "Lab5.exe",
+	"nameOnDisk" : "Lab5",
 	"paths" : 
 	{
 		"build" : ".",

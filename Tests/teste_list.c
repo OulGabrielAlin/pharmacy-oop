@@ -4,8 +4,8 @@
 #include <string.h>
 #include <math.h>
 #include <assert.h>
-#include <stdlib.h>
 
+// functie de test pentru functia add (in lista)
 void test_add()
 {
 	List* list = creeaza_lista();
@@ -28,6 +28,7 @@ void test_add()
 	destroy_list(list);
 }
 
+// functie de test pentru functia delete (in lista)
 void test_delete()
 {
 	List* list = creeaza_lista();

@@ -8,131 +8,131 @@
         -:    4:#include "math.h"
         -:    5:#include <assert.h>
         -:    6:#include <string.h>
-        -:    7:#include "teste_list.h"
-        -:    8:#include <stdlib.h>
-        -:    9:
+        -:    7:
+        -:    8:// functie de test pentru functia store (repo)
 function test_store called 1 returned 100% blocks executed 61%
-        1:   10:void test_store()
-        -:   11:{
-        1:   12:	Repo* repo = creeaza_repo();
-        1:   12-block  0
+        1:    9:void test_store()
+        -:   10:{
+        1:   11:	Repo* repo = creeaza_repo();
+        1:   11-block  0
 call    0 returned 1
-       1*:   13:	assert(repo->lista_med->size == 0);
+       1*:   12:	assert(repo->lista_med->size == 0);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   13-block  0
+    %%%%%:   12-block  0
 call    2 never executed
-        -:   14:
-        1:   15:	Medicament* m1 = creeaza_medicament(1, "Paracetamol", 12.10, 5);
-        1:   15-block  0
+        -:   13:
+        1:   14:	Medicament* m1 = creeaza_medicament(1, "Paracetamol", 12.10, 5);
+        1:   14-block  0
 call    0 returned 1
-        1:   16:	store(repo, m1);
+        1:   15:	store(repo, m1);
 call    0 returned 1
-       1*:   17:	assert(((Medicament*)repo->lista_med->elems[0])->cod == 1);
+       1*:   16:	assert(((Medicament*)repo->lista_med->elems[0])->cod == 1);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   17-block  0
+    %%%%%:   16-block  0
 call    2 never executed
-       1*:   18:	assert(strcmp(((Medicament*)repo->lista_med->elems[0])->nume, "Paracetamol") == 0);
+       1*:   17:	assert(strcmp(((Medicament*)repo->lista_med->elems[0])->nume, "Paracetamol") == 0);
+        1:   17-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   17-block  1
+call    2 never executed
+       1*:   18:	assert(fabs(((Medicament*)repo->lista_med->elems[0])->concentratie - 12.10) < 0.0001);
         1:   18-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   18-block  1
 call    2 never executed
-       1*:   19:	assert(fabs(((Medicament*)repo->lista_med->elems[0])->concentratie - 12.10) < 0.0001);
+       1*:   19:	assert(((Medicament*)repo->lista_med->elems[0])->cantitate == 5);
         1:   19-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   19-block  1
 call    2 never executed
-       1*:   20:	assert(((Medicament*)repo->lista_med->elems[0])->cantitate == 5);
+       1*:   20:	assert(repo->lista_med->size == 1);
         1:   20-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   20-block  1
 call    2 never executed
-       1*:   21:	assert(repo->lista_med->size == 1);
-        1:   21-block  0
+        -:   21:
+        1:   22:	Medicament* m2 = creeaza_medicament(1, "Paracetamol", 12.10, 10);
+        1:   22-block  0
+call    0 returned 1
+        1:   23:	store(repo, m2);
+call    0 returned 1
+       1*:   24:	assert(((Medicament*)repo->lista_med->elems[0])->cod == 1);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   21-block  1
+    %%%%%:   24-block  0
 call    2 never executed
-        -:   22:
-        1:   23:	Medicament* m2 = creeaza_medicament(1, "Paracetamol", 12.10, 10);
-        1:   23-block  0
-call    0 returned 1
-        1:   24:	store(repo, m2);
-call    0 returned 1
-       1*:   25:	assert(((Medicament*)repo->lista_med->elems[0])->cod == 1);
+       1*:   25:	assert(strcmp(((Medicament*)repo->lista_med->elems[0])->nume, "Paracetamol") == 0);
+        1:   25-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   25-block  0
+    %%%%%:   25-block  1
 call    2 never executed
-       1*:   26:	assert(strcmp(((Medicament*)repo->lista_med->elems[0])->nume, "Paracetamol") == 0);
+       1*:   26:	assert(fabs(((Medicament*)repo->lista_med->elems[0])->concentratie - 12.10) < 0.0001);
         1:   26-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   26-block  1
 call    2 never executed
-       1*:   27:	assert(fabs(((Medicament*)repo->lista_med->elems[0])->concentratie - 12.10) < 0.0001);
+       1*:   27:	assert(((Medicament*)repo->lista_med->elems[0])->cantitate == 15);
         1:   27-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   27-block  1
 call    2 never executed
-       1*:   28:	assert(((Medicament*)repo->lista_med->elems[0])->cantitate == 15);
+       1*:   28:	assert(repo->lista_med->size == 1);
         1:   28-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   28-block  1
 call    2 never executed
-       1*:   29:	assert(repo->lista_med->size == 1);
-        1:   29-block  0
+        -:   29:
+        1:   30:	Medicament* m3 = creeaza_medicament(2, "Ibuprofen", 5.1, 2);
+        1:   30-block  0
+call    0 returned 1
+        1:   31:	store(repo, m3);
+call    0 returned 1
+       1*:   32:	assert(((Medicament*)repo->lista_med->elems[1])->cod == 2);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   29-block  1
+    %%%%%:   32-block  0
 call    2 never executed
-        -:   30:
-        1:   31:	Medicament* m3 = creeaza_medicament(2, "Ibuprofen", 5.1, 2);
-        1:   31-block  0
-call    0 returned 1
-        1:   32:	store(repo, m3);
-call    0 returned 1
-       1*:   33:	assert(((Medicament*)repo->lista_med->elems[1])->cod == 2);
+       1*:   33:	assert(strcmp(((Medicament*)repo->lista_med->elems[1])->nume, "Ibuprofen") == 0);
+        1:   33-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   33-block  0
+    %%%%%:   33-block  1
 call    2 never executed
-       1*:   34:	assert(strcmp(((Medicament*)repo->lista_med->elems[1])->nume, "Ibuprofen") == 0);
+       1*:   34:	assert(fabs(((Medicament*)repo->lista_med->elems[1])->concentratie - 5.1) < 0.0001);
         1:   34-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   34-block  1
 call    2 never executed
-       1*:   35:	assert(fabs(((Medicament*)repo->lista_med->elems[1])->concentratie - 5.1) < 0.0001);
+       1*:   35:	assert(((Medicament*)repo->lista_med->elems[1])->cantitate == 2);
         1:   35-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   35-block  1
 call    2 never executed
-       1*:   36:	assert(((Medicament*)repo->lista_med->elems[1])->cantitate == 2);
+       1*:   36:	assert(repo->lista_med->size == 2);
         1:   36-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   36-block  1
 call    2 never executed
-       1*:   37:	assert(repo->lista_med->size == 2);
-        1:   37-block  0
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
-    %%%%%:   37-block  1
-call    2 never executed
-        -:   38:
-        1:   39:	distruge_repo(repo);
-        1:   39-block  0
+        -:   37:
+        1:   38:	distruge_repo(repo);
+        1:   38-block  0
 call    0 returned 1
-        1:   40:}
-        -:   41:
+        1:   39:}
+        -:   40:
+        -:   41:// functie de test pentru functia update (repo)
 function test_update called 1 returned 100% blocks executed 71%
         1:   42:void test_update()
         -:   43:{
@@ -185,150 +185,152 @@ call    2 never executed
 call    0 returned 1
         1:   59:}
         -:   60:
+        -:   61:// functie de test pentru functia find (repo)
 function test_find called 1 returned 100% blocks executed 67%
-        1:   61:void test_find()
-        -:   62:{
-        1:   63:	Repo* repo = creeaza_repo();
-        1:   63-block  0
+        1:   62:void test_find()
+        -:   63:{
+        1:   64:	Repo* repo = creeaza_repo();
+        1:   64-block  0
 call    0 returned 1
-        1:   64:	Medicament* m1 = creeaza_medicament(101, "Paduden", 21.1, 10);
+        1:   65:	Medicament* m1 = creeaza_medicament(101, "Paduden", 21.1, 10);
 call    0 returned 1
-        1:   65:	store(repo, m1);
+        1:   66:	store(repo, m1);
 call    0 returned 1
-       1*:   66:	assert(repo->lista_med->size == 1);
+       1*:   67:	assert(repo->lista_med->size == 1);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   66-block  0
+    %%%%%:   67-block  0
 call    2 never executed
-        -:   67:
-        -:   68:	int poz;
-        1:   69:	poz = find(repo, 200);
-        1:   69-block  0
+        -:   68:
+        -:   69:	int poz;
+        1:   70:	poz = find(repo, 200);
+        1:   70-block  0
 call    0 returned 1
-       1*:   70:	assert(poz == -1);
+       1*:   71:	assert(poz == -1);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   70-block  0
+    %%%%%:   71-block  0
 call    2 never executed
-        -:   71:
-        1:   72:	poz = find(repo, 101);
-        1:   72-block  0
+        -:   72:
+        1:   73:	poz = find(repo, 101);
+        1:   73-block  0
 call    0 returned 1
-       1*:   73:	assert(poz == 0);
+       1*:   74:	assert(poz == 0);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   73-block  0
+    %%%%%:   74-block  0
 call    2 never executed
-       1*:   74:	assert(((Medicament*)repo->lista_med->elems[poz])->cod == 101);
-        1:   74-block  0
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
-    %%%%%:   74-block  1
-call    2 never executed
-       1*:   75:	assert(strcmp(((Medicament*)repo->lista_med->elems[poz])->nume, "Paduden") == 0);
+       1*:   75:	assert(((Medicament*)repo->lista_med->elems[poz])->cod == 101);
         1:   75-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   75-block  1
 call    2 never executed
-       1*:   76:	assert(fabs(((Medicament*)repo->lista_med->elems[poz])->concentratie - 21.1) < 0.0001);
+       1*:   76:	assert(strcmp(((Medicament*)repo->lista_med->elems[poz])->nume, "Paduden") == 0);
         1:   76-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   76-block  1
 call    2 never executed
-       1*:   77:	assert(((Medicament*)repo->lista_med->elems[poz])->cantitate == 10);
+       1*:   77:	assert(fabs(((Medicament*)repo->lista_med->elems[poz])->concentratie - 21.1) < 0.0001);
         1:   77-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
     %%%%%:   77-block  1
 call    2 never executed
-        -:   78:
-        1:   79:	distruge_repo(repo);
-        1:   79-block  0
+       1*:   78:	assert(((Medicament*)repo->lista_med->elems[poz])->cantitate == 10);
+        1:   78-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   78-block  1
+call    2 never executed
+        -:   79:
+        1:   80:	distruge_repo(repo);
+        1:   80-block  0
 call    0 returned 1
-        1:   80:}
-        -:   81:
+        1:   81:}
+        -:   82:
+        -:   83:// functie de test pentru functia erase (repo)
 function test_erase called 1 returned 100% blocks executed 68%
-        1:   82:void test_erase()
-        -:   83:{
-        1:   84:	Repo* repo = creeaza_repo();
-        1:   84-block  0
+        1:   84:void test_erase()
+        -:   85:{
+        1:   86:	Repo* repo = creeaza_repo();
+        1:   86-block  0
 call    0 returned 1
-       1*:   85:	assert(repo->lista_med->size == 0);
+       1*:   87:	assert(repo->lista_med->size == 0);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   85-block  0
+    %%%%%:   87-block  0
 call    2 never executed
-        -:   86:
-        1:   87:	Medicament* m1 = creeaza_medicament(10, "Paracetamol", 10.15, 10);
-        1:   87-block  0
+        -:   88:
+        1:   89:	Medicament* m1 = creeaza_medicament(10, "Paracetamol", 10.15, 10);
+        1:   89-block  0
 call    0 returned 1
-        1:   88:	Medicament* m2 = creeaza_medicament(11, "Ibuprofen", 22.05, 15);
+        1:   90:	Medicament* m2 = creeaza_medicament(11, "Ibuprofen", 22.05, 15);
 call    0 returned 1
-        1:   89:	store(repo, m1);
+        1:   91:	store(repo, m1);
 call    0 returned 1
-        1:   90:	store(repo, m2);
+        1:   92:	store(repo, m2);
 call    0 returned 1
-       1*:   91:	assert(repo->lista_med->size == 2);
+       1*:   93:	assert(repo->lista_med->size == 2);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   91-block  0
+    %%%%%:   93-block  0
 call    2 never executed
-        -:   92:
-        -:   93:	int status;
-        1:   94:	status = erase(repo, 10);
-        1:   94-block  0
-call    0 returned 1
-       1*:   95:	assert(status == 1);
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
-    %%%%%:   95-block  0
-call    2 never executed
-       1*:   96:	assert(repo->lista_med->size == 1);
+        -:   94:
+        -:   95:	int status;
+        1:   96:	status = erase(repo, 10);
         1:   96-block  0
+call    0 returned 1
+       1*:   97:	assert(status == 1);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   96-block  1
+    %%%%%:   97-block  0
 call    2 never executed
-       1*:   97:	assert(((Medicament*)repo->lista_med->elems[0])->cod == 11);
-        1:   97-block  0
+       1*:   98:	assert(repo->lista_med->size == 1);
+        1:   98-block  0
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:   97-block  1
+    %%%%%:   98-block  1
 call    2 never executed
-        -:   98:
-        1:   99:	status = erase(repo, 11);
+       1*:   99:	assert(((Medicament*)repo->lista_med->elems[0])->cod == 11);
         1:   99-block  0
-call    0 returned 1
-       1*:  100:	assert(status == 1);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:  100-block  0
+    %%%%%:   99-block  1
 call    2 never executed
-       1*:  101:	assert(repo->lista_med->size == 0);
+        -:  100:
+        1:  101:	status = erase(repo, 11);
         1:  101-block  0
+call    0 returned 1
+       1*:  102:	assert(status == 1);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:  101-block  1
+    %%%%%:  102-block  0
 call    2 never executed
-        -:  102:
-        1:  103:	status = erase(repo, 10);
+       1*:  103:	assert(repo->lista_med->size == 0);
         1:  103-block  0
-call    0 returned 1
-       1*:  104:	assert(status == 0);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:  104-block  0
+    %%%%%:  103-block  1
 call    2 never executed
-       1*:  105:	assert(repo->lista_med->size == 0);
+        -:  104:
+        1:  105:	status = erase(repo, 10);
         1:  105-block  0
+call    0 returned 1
+       1*:  106:	assert(status == 0);
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-    %%%%%:  105-block  1
+    %%%%%:  106-block  0
 call    2 never executed
-        -:  106:
-        1:  107:	distruge_repo(repo);
+       1*:  107:	assert(repo->lista_med->size == 0);
         1:  107-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  107-block  1
+call    2 never executed
+        -:  108:
+        1:  109:	distruge_repo(repo);
+        1:  109-block  0
 call    0 returned 1
-        1:  108:}
+        1:  110:}

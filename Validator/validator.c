@@ -16,4 +16,6 @@ void valideaza(int cod, char nume[], float concentratie, int cantitate, char* er
 		strcat(errors, "Concentratia trebuie sa aiba o valoare in intervalul (0, 100)\n");
 	if (cantitate < 0)
 		strcat(errors, "Cantitatea trebuie sa fie un numar intreg pozitiv\n");
+	if (strlen(nume) == 0)
+		strcat(errors, "Trebuie sa introduceti un nume pentru medicament\n");
 }

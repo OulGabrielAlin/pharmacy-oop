@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Lab5::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Lab5-51cf1dbf5f96b04b66bc.json",
+					"jsonFile" : "target-Lab5-6637f1b44aa2e69ada12.json",
 					"name" : "Lab5",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage",
+		"build" : "/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind",
 		"source" : "/mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5"
 	},
 	"version" : 

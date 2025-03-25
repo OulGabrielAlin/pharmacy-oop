@@ -13,14 +13,14 @@
         -:    9:*  concentratie: concentratia medicamentului (numar rational)
         -:   10:*  cantitate: cantitatea medicamentului (numar intreg)
         -:   11:*/
-function creeaza_medicament called 60 returned 100% blocks executed 50%
-       60:   12:Medicament* creeaza_medicament(int cod, char nume[], float concentratie, int cantitate)
+function creeaza_medicament called 61 returned 100% blocks executed 50%
+       61:   12:Medicament* creeaza_medicament(int cod, char nume[], float concentratie, int cantitate)
         -:   13:{
-       60:   14:	Medicament* m = malloc(sizeof(Medicament));
-       60:   15:	if (m == NULL)
-       60:   15-block  0
+       61:   14:	Medicament* m = malloc(sizeof(Medicament));
+       61:   15:	if (m == NULL)
+       61:   15-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 60
+branch  1 taken 61
         -:   16:	{
     #####:   17:		perror("Couldn't find memory");
     %%%%%:   17-block  0
@@ -28,12 +28,12 @@ call    0 never executed
     #####:   18:		return NULL;
         -:   19:	}
         -:   20:
-       60:   21:	m->nume = malloc(sizeof(char) * (strlen(nume) + 1));
+       61:   21:	m->nume = malloc(sizeof(char) * (strlen(nume) + 1));
         -:   22:
-       60:   23:	if (m->nume == NULL)
-       60:   23-block  0
+       61:   23:	if (m->nume == NULL)
+       61:   23-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 60
+branch  1 taken 61
         -:   24:	{
     #####:   25:		perror("Couldn't find memory");
     %%%%%:   25-block  0
@@ -41,13 +41,13 @@ call    0 never executed
     #####:   26:		return NULL;
         -:   27:	}
         -:   28:
-       60:   29:	m->cod = cod;
-       60:   30:	strcpy(m->nume, nume);
-       60:   31:	m->concentratie = concentratie;
-       60:   32:	m->cantitate = cantitate;
+       61:   29:	m->cod = cod;
+       61:   30:	strcpy(m->nume, nume);
+       61:   31:	m->concentratie = concentratie;
+       61:   32:	m->cantitate = cantitate;
         -:   33:
-       60:   34:	return m;
-       60:   34-block  0
+       61:   34:	return m;
+       61:   34-block  0
         -:   35:}
         -:   36:
         -:   37:/* Returneaza o copie independenta a medicamentului dat
@@ -94,9 +94,9 @@ call    0 never executed
         -:   66:/* Elibereaza memoria ocupata de un medicament
         -:   67:*  post: medicamentul este distrus
         -:   68:*/
-function distruge_medicament called 64 returned 100% blocks executed 100%
-       64:   69:void distruge_medicament(Medicament* m)
+function distruge_medicament called 65 returned 100% blocks executed 100%
+       65:   69:void distruge_medicament(Medicament* m)
         -:   70:{
-       64:   71:	free(m->nume);
-       64:   72:	free(m);
-       64:   73:}
+       65:   71:	free(m->nume);
+       65:   72:	free(m);
+       65:   73:}

@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = 
 
-C_FLAGS = --coverage -std=gnu2x -fdiagnostics-color=always
+C_FLAGS = --coverage -g -Wall -Wextra -std=gnu2x -fdiagnostics-color=always
 

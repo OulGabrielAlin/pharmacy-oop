@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.28.3)
 project(Lab5 C)
 
 set(CMAKE_C_STANDARD 23)
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_C_FLAGS "--coverage -g ${CMAKE_CXX_FLAGS}")
 
 add_executable(Lab5 main.c
                 Controller/mysort.c

@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -38,7 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu2x -fdiagnostics-color=always"
+					"fragment" : "--coverage -g -Wall -Wextra -g -std=gnu2x -fdiagnostics-color=always"
 				}
 			],
 			"language" : "C",
@@ -74,7 +74,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "--coverage -g -Wall -Wextra -g",
 				"role" : "flags"
 			},
 			{
