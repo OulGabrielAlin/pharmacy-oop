@@ -1,4 +1,4 @@
 /usr/bin/cmake -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage -G "Unix Makefiles" -S /mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5 -B /mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage
--- Configuring done (0.2s)
--- Generating done (0.5s)
+-- Configuring done (0.1s)
+-- Generating done (0.2s)
 -- Build files have been written to: /mnt/d/Info_Facultate/Semestrul_2/OOP/Lab5/cmake-build-wsl-valgrind-coverage
