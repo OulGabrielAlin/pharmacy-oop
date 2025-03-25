@@ -151,11 +151,11 @@ call    0 returned 11
         -:   96:/* Elibereaza memoria ocupata de repository
         -:   97:*  post: repository-ul este distrus
         -:   98:*/
-function distruge_repo called 11 returned 100% blocks executed 100%
-       11:   99:void distruge_repo(Repo* repo)
+function distruge_repo called 10 returned 100% blocks executed 100%
+       10:   99:void distruge_repo(Repo* repo)
         -:  100:{
-       11:  101:	destroy_list(repo->lista_med);
-       11:  101-block  0
-call    0 returned 11
-       11:  102:	free(repo);
-       11:  103:}
+       10:  101:	destroy_list(repo->lista_med);
+       10:  101-block  0
+call    0 returned 10
+       10:  102:	free(repo);
+       10:  103:}

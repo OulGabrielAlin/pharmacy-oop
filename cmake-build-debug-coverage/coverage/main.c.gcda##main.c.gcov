@@ -4,17 +4,17 @@
         -:    0:Runs:1
         -:    1:#include "UI/console.h"
         -:    2:
-function main called 1 returned 100% blocks executed 100%
+function main called 1 returned 0% blocks executed 60%
         1:    3:int main()
         -:    4:{
         1:    5:    Consola* consola = creeaza_consola();
         1:    5-block  0
 call    0 returned 1
         1:    6:    run(consola);
-call    0 returned 1
+call    0 returned 0
         -:    7:
-        1:    8:    distruge_consola(consola);
-call    0 returned 1
+    #####:    8:    distruge_consola(consola);
+call    0 never executed
         -:    9:
-        1:   10:    return 0;
+    #####:   10:    return 0;
         -:   11:}

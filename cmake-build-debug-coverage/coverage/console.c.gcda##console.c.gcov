@@ -45,14 +45,14 @@ call    0 never executed
         1:   28-block  0
         -:   29:}
         -:   30:
-function distruge_consola called 1 returned 100% blocks executed 100%
-        1:   31:void distruge_consola(Consola* consola)
+function distruge_consola called 0 returned 0% blocks executed 0%
+    #####:   31:void distruge_consola(Consola* consola)
         -:   32:{
-        1:   33:	distruge_serviciu(consola->service);
-        1:   33-block  0
-call    0 returned 1
-        1:   34:	free(consola);
-        1:   35:}
+    #####:   33:	distruge_serviciu(consola->service);
+    %%%%%:   33-block  0
+call    0 never executed
+    #####:   34:	free(consola);
+    #####:   35:}
         -:   36:
         -:   37:/* Afiseaza meniul aplicatiei
         -:   38:*/
@@ -480,7 +480,7 @@ call    0 never executed
 call    0 never executed
         -:  292:}
         -:  293:
-function run called 1 returned 100% blocks executed 48%
+function run called 1 returned 0% blocks executed 30%
         1:  294:void run(Consola* consola)
         -:  295:{
         1:  296:	int is_running = 1;
@@ -492,10 +492,10 @@ call    0 returned 1
         1:  299:	adauga_default(consola->service);
 call    0 returned 1
         -:  300:
-        2:  301:	while (is_running)
-        2:  301-block  0
+        1:  301:	while (is_running)
+        1:  301-block  0
 branch  0 taken 1
-branch  1 taken 1 (fallthrough)
+branch  1 taken 0 (fallthrough)
         -:  302:	{
         1:  303:		afiseaza_meniu();
         1:  303-block  0
@@ -503,30 +503,30 @@ call    0 returned 1
         -:  304:		char optiune[2];
         -:  305:		int cnt;
         1:  306:		cnt = scanf("%s", optiune);
-call    0 returned 1
-        1:  307:		if (cnt != 1)
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
+call    0 returned 0
+    #####:  307:		if (cnt != 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
         -:  308:		{
     #####:  309:			printf("Nu s-au putut citi datele!");
     %%%%%:  309-block  0
 call    0 never executed
     #####:  310:			return;
         -:  311:		}
-        1:  312:		printf("\n");
-        1:  312-block  0
-call    0 returned 1
+    #####:  312:		printf("\n");
+    %%%%%:  312-block  0
+call    0 never executed
         -:  313:		
-        1:  314:		optiune[0] = toupper(optiune[0]);
-        1:  315:		switch (optiune[0]) {
-branch  0 taken 0
-branch  1 taken 0
-branch  2 taken 0
-branch  3 taken 0
-branch  4 taken 0
-branch  5 taken 0
-branch  6 taken 1
-branch  7 taken 0
+    #####:  314:		optiune[0] = toupper(optiune[0]);
+    #####:  315:		switch (optiune[0]) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
     #####:  316:			case '1':
     #####:  317:				adauga_medicament_ui(consola);
     %%%%%:  317-block  0
@@ -563,10 +563,10 @@ call    0 never executed
 call    0 never executed
     #####:  338:				break;
         -:  339:
-        1:  340:			case 'X':
-        1:  341:				is_running = 0;
-        1:  342:				break;
-        1:  342-block  0
+    #####:  340:			case 'X':
+    #####:  341:				is_running = 0;
+    #####:  342:				break;
+    %%%%%:  342-block  0
         -:  343:
         -:  344:		}
         -:  345:	}
