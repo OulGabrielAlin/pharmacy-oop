@@ -499,7 +499,7 @@ function test_filtreaza_dupa_cantitate called 1 returned 100% blocks executed 79
         1:  176-block  0
 call    0 returned 1
         -:  177:
-        1:  178:	List* list = creeaza_lista();
+        1:  178:	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 call    0 returned 1
         1:  179:	char errors[] = "";
         1:  180:	adauga_medicament(service, 11, "Algocalmin", 12.1, 10, errors);
@@ -554,7 +554,7 @@ function test_filtreaza_dupa_nume called 1 returned 100% blocks executed 79%
         1:  199-block  0
 call    0 returned 1
         -:  200:
-        1:  201:	List* list = creeaza_lista();
+        1:  201:	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 call    0 returned 1
         1:  202:	char errors[] = "";
         1:  203:	adauga_medicament(service, 11, "Algocalmin", 12.1, 10, errors);
@@ -600,3 +600,392 @@ call    0 returned 1
         1:  216:	distruge_serviciu(service);
 call    0 returned 1
         1:  217:}
+        -:  218:
+        -:  219:// functie de test pentru filtreaza_dupa_concentratie (service)
+function test_filtreaza_dupa_concentratie called 1 returned 100% blocks executed 77%
+        1:  220:void test_filtreaza_dupa_concentratie()
+        -:  221:{
+        1:  222:	ServiceMed* service = creeaza_serviciu();
+        1:  222-block  0
+call    0 returned 1
+        -:  223:
+        1:  224:	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+call    0 returned 1
+        1:  225:	char errors[] = "";
+        1:  226:	adauga_medicament(service, 11, "Algocalmin", 12.1, 10, errors);
+call    0 returned 1
+        1:  227:	adauga_medicament(service, 12, "Paracetamol", 15.2, 4, errors);
+call    0 returned 1
+        1:  228:	adauga_medicament(service, 13, "Omeprazol", 19.2, 20, errors);
+call    0 returned 1
+        1:  229:	adauga_medicament(service, 14, "Amoxicilina", 20.1, 12, errors);
+call    0 returned 1
+        1:  230:	adauga_medicament(service, 15, "Prednison", 13.2, 5, errors);
+call    0 returned 1
+       1*:  231:	assert(strlen(errors) == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  231-block  0
+call    2 never executed
+        -:  232:
+        1:  233:	filtreaza_dupa_concentratie(service, list, 10, 15);
+        1:  233-block  0
+call    0 returned 1
+       1*:  234:	assert(list->size == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  234-block  0
+call    2 never executed
+       1*:  235:	assert(((Medicament*)list->elems[0])->cod == 11);
+        1:  235-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  235-block  1
+call    2 never executed
+       1*:  236:	assert(((Medicament*)list->elems[1])->cod == 15);
+        1:  236-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  236-block  1
+call    2 never executed
+        1:  237:	destroy_list(list);
+        1:  237-block  0
+call    0 returned 1
+        -:  238:
+        1:  239:	List* list1 = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+call    0 returned 1
+        1:  240:	filtreaza_dupa_concentratie(service, list1, 19, 20);
+call    0 returned 1
+       1*:  241:	assert(list1->size == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  241-block  0
+call    2 never executed
+       1*:  242:	assert(((Medicament*)list1->elems[0])->cod == 13);
+        1:  242-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  242-block  1
+call    2 never executed
+        -:  243:
+        1:  244:	destroy_list(list1);
+        1:  244-block  0
+call    0 returned 1
+        1:  245:	distruge_serviciu(service);
+call    0 returned 1
+        1:  246:}
+        -:  247:
+        -:  248:// functie de test pentru functia (Service) Undo
+function test_undo called 1 returned 100% blocks executed 67%
+        1:  249:void test_undo() {
+        1:  250:	ServiceMed* service = creeaza_serviciu();
+        1:  250-block  0
+call    0 returned 1
+        -:  251:
+        1:  252:	char errors[] = "";
+        1:  253:	adauga_medicament(service, 11, "Algocalmin", 12.1, 10, errors);
+call    0 returned 1
+        1:  254:	adauga_medicament(service, 12, "Paracetamol", 15.2, 4, errors);
+call    0 returned 1
+        1:  255:	adauga_medicament(service, 13, "Omeprazol", 19.2, 20, errors);
+call    0 returned 1
+        1:  256:	adauga_medicament(service, 14, "Amoxicilina", 20.1, 12, errors);
+call    0 returned 1
+        1:  257:	adauga_medicament(service, 15, "Prednison", 13.2, 5, errors);
+call    0 returned 1
+       1*:  258:	assert(strlen(errors) == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  258-block  0
+call    2 never executed
+       1*:  259:	assert(service->repo->lista_med->size == 5);
+        1:  259-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  259-block  1
+call    2 never executed
+        -:  260:
+        1:  261:	Undo(service);
+        1:  261-block  0
+call    0 returned 1
+       1*:  262:	assert(service->repo->lista_med->size == 4);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  262-block  0
+call    2 never executed
+       1*:  263:	assert(find(service->repo, 15) == -1);
+        1:  263-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  263-block  1
+call    3 never executed
+        -:  264:
+        1:  265:	Undo(service);
+        1:  265-block  0
+call    0 returned 1
+       1*:  266:	assert(service->repo->lista_med->size == 3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  266-block  0
+call    2 never executed
+       1*:  267:	assert(find(service->repo, 14) == -1);
+        1:  267-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  267-block  1
+call    3 never executed
+        -:  268:
+        1:  269:	modifica_medicament(service, 13, "Nospa", 14.3, errors);
+        1:  269-block  0
+call    0 returned 1
+        1:  270:	modifica_medicament(service, 13, "Aspacardin", 15.2, errors);
+call    0 returned 1
+       1*:  271:	assert(((Medicament*)service->repo->lista_med->elems[2])->cod == 13);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  271-block  0
+call    2 never executed
+       1*:  272:	assert(strcmp(((Medicament*)service->repo->lista_med->elems[2])->nume, "Aspacardin") == 0);
+        1:  272-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  272-block  1
+call    2 never executed
+       1*:  273:	assert(fabs(((Medicament*)service->repo->lista_med->elems[2])->concentratie - 15.2) < 0.0001);
+        1:  273-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  273-block  1
+call    2 never executed
+       1*:  274:	assert(((Medicament*)service->repo->lista_med->elems[2])->cantitate == 20);
+        1:  274-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  274-block  1
+call    2 never executed
+        -:  275:
+        1:  276:	Undo(service);
+        1:  276-block  0
+call    0 returned 1
+       1*:  277:	assert(((Medicament*)service->repo->lista_med->elems[2])->cod == 13);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  277-block  0
+call    2 never executed
+       1*:  278:	assert(strcmp(((Medicament*)service->repo->lista_med->elems[2])->nume, "Nospa") == 0);
+        1:  278-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  278-block  1
+call    2 never executed
+       1*:  279:	assert(fabs(((Medicament*)service->repo->lista_med->elems[2])->concentratie - 14.3) < 0.0001);
+        1:  279-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  279-block  1
+call    2 never executed
+       1*:  280:	assert(((Medicament*)service->repo->lista_med->elems[2])->cantitate == 20);
+        1:  280-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  280-block  1
+call    2 never executed
+        -:  281:
+        1:  282:	Undo(service);
+        1:  282-block  0
+call    0 returned 1
+       1*:  283:	assert(((Medicament*)service->repo->lista_med->elems[2])->cod == 13);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  283-block  0
+call    2 never executed
+       1*:  284:	assert(strcmp(((Medicament*)service->repo->lista_med->elems[2])->nume, "Omeprazol") == 0);
+        1:  284-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  284-block  1
+call    2 never executed
+       1*:  285:	assert(fabs(((Medicament*)service->repo->lista_med->elems[2])->concentratie - 19.2) < 0.0001);
+        1:  285-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  285-block  1
+call    2 never executed
+       1*:  286:	assert(((Medicament*)service->repo->lista_med->elems[2])->cantitate == 20);
+        1:  286-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  286-block  1
+call    2 never executed
+        -:  287:
+        1:  288:	Undo(service);
+        1:  288-block  0
+call    0 returned 1
+       1*:  289:	assert(find(service->repo, 13) == -1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  289-block  0
+call    3 never executed
+       1*:  290:	assert(service->repo->lista_med->size == 2);
+        1:  290-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  290-block  1
+call    2 never executed
+        -:  291:
+        1:  292:	adauga_medicament(service, 13, "Omeprazol", 19.2, 20, errors);
+        1:  292-block  0
+call    0 returned 1
+        1:  293:	adauga_medicament(service, 14, "Amoxicilina", 20.1, 12, errors);
+call    0 returned 1
+        -:  294:
+       1*:  295:	assert(service->repo->lista_med->size == 4);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  295-block  0
+call    2 never executed
+        1:  296:	sterge_medicament(service, 11);
+        1:  296-block  0
+call    0 returned 1
+        1:  297:	sterge_medicament(service, 13);
+call    0 returned 1
+        -:  298:
+       1*:  299:	assert(service->repo->lista_med->size == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  299-block  0
+call    2 never executed
+       1*:  300:	assert(find(service->repo, 13) == -1);
+        1:  300-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  300-block  1
+call    3 never executed
+       1*:  301:	assert(find(service->repo, 11) == -1);
+        1:  301-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  301-block  1
+call    3 never executed
+        -:  302:
+        1:  303:	Undo(service);
+        1:  303-block  0
+call    0 returned 1
+       1*:  304:	assert(service->repo->lista_med->size == 3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  304-block  0
+call    2 never executed
+       1*:  305:	assert(find(service->repo, 13) == 1);
+        1:  305-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  305-block  1
+call    3 never executed
+        -:  306:
+        1:  307:	Undo(service);
+        1:  307-block  0
+call    0 returned 1
+       1*:  308:	assert(service->repo->lista_med->size == 4);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  308-block  0
+call    2 never executed
+       1*:  309:	assert(find(service->repo, 13) == 2);
+        1:  309-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  309-block  1
+call    3 never executed
+       1*:  310:	assert(find(service->repo, 11) == 0);
+        1:  310-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  310-block  1
+call    3 never executed
+        -:  311:
+        1:  312:	Undo(service);
+        1:  312-block  0
+call    0 returned 1
+       1*:  313:	assert(service->repo->lista_med->size == 3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  313-block  0
+call    2 never executed
+       1*:  314:	assert(find(service->repo, 14) == -1);
+        1:  314-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  314-block  1
+call    3 never executed
+        -:  315:
+        1:  316:	Undo(service);
+        1:  316-block  0
+call    0 returned 1
+       1*:  317:	assert(service->repo->lista_med->size == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  317-block  0
+call    2 never executed
+       1*:  318:	assert(find(service->repo, 13) == -1);
+        1:  318-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  318-block  1
+call    3 never executed
+        -:  319:
+        1:  320:	Undo(service);
+        1:  320-block  0
+call    0 returned 1
+       1*:  321:	assert(service->repo->lista_med->size == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  321-block  0
+call    2 never executed
+       1*:  322:	assert(find(service->repo, 12) == -1);
+        1:  322-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  322-block  1
+call    3 never executed
+        -:  323:
+        1:  324:	Undo(service);
+        1:  324-block  0
+call    0 returned 1
+       1*:  325:	assert(service->repo->lista_med->size == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  325-block  0
+call    2 never executed
+       1*:  326:	assert(find(service->repo, 11) == -1);
+        1:  326-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  326-block  1
+call    3 never executed
+        -:  327:
+        1:  328:	Undo(service);
+        1:  328-block  0
+call    0 returned 1
+       1*:  329:	assert(service->repo->lista_med->size == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  329-block  0
+call    2 never executed
+        -:  330:
+        1:  331:	distruge_serviciu(service);
+        1:  331-block  0
+call    0 returned 1
+        1:  332:}

@@ -26,6 +26,15 @@ ServiceMed* creeaza_serviciu()
 	}
 
 	service->repo = repo;
+
+	List* list = creeaza_lista((void*)destroy_list, (void*)copy_list);
+	if (list == NULL)
+	{
+		perror("Couldn't allocate memory");
+		return NULL;
+	}
+
+	service->listaUndo = list;
 	return service;
 }
 
@@ -35,6 +44,7 @@ ServiceMed* creeaza_serviciu()
 void distruge_serviciu(ServiceMed* service)
 {
 	distruge_repo(service->repo);
+	destroy_list(service->listaUndo);
 	free(service);
 }
 
@@ -51,15 +61,19 @@ void adauga_medicament(ServiceMed* service, int cod, char nume[], float concentr
 	valideaza(cod, nume, concentratie, cantitate, errors);
 
 	Medicament* m = creeaza_medicament(cod, nume, concentratie, cantitate);
+	List* copie = copy_list(service->repo->lista_med);
 
 	if (strlen(errors) == 0)
 	{
 		store(service->repo, m);
+		add(service->listaUndo, copie);
 		return;
 	}
 
-	if (m != NULL)
+	if (m != NULL) {
 		distruge_medicament(m);
+		destroy_list(copie);
+	}
 }
 
 /* Modifica numele si concentratia unui medicament care are un cod dat
@@ -77,11 +91,16 @@ void modifica_medicament(ServiceMed* service, int cod, char nume[], float concen
 	int status = 1;
 	if (strlen(errors) != 0)
 		return;
-		
+
+	List* copie = copy_list(service->repo->lista_med);
 	status = update(service->repo, cod, nume, concentratie);
 
-	if (!status)
+	if (!status) {
 		strcat(errors, "Medicamentul cu codul dat nu exista\n");
+		destroy_list(copie);
+		return;
+	}
+	add(service->listaUndo, copie);
 }
 
 /* Sterge un medicament care are un cod dat
@@ -91,7 +110,15 @@ void modifica_medicament(ServiceMed* service, int cod, char nume[], float concen
 */
 int sterge_medicament(ServiceMed* service, int cod)
 {
-	return erase(service->repo, cod);
+	List* copie = copy_list(service->repo->lista_med);
+	int retur = erase(service->repo, cod);
+
+	if (retur == 1)
+		add(service->listaUndo, copie);
+	else
+		destroy_list(copie);
+
+	return retur;
 }
 
 int cmpByType(Medicament* m1, Medicament* m2)
@@ -139,6 +166,24 @@ void filtreaza_dupa_nume(ServiceMed* service, List* list, char c)
 		}
 }
 
+/* Selecteaza din lista de medicamente acelea care au concentratia intre doua valori date
+*  service: serviciul de medicamente curent
+*  list: lista in care vor fi adaugate medicamentele filtrate
+*  c1: limita inferioara de concentratie (numar real)
+*  c2: limita superioara de concentratie (numar real)
+*/
+void filtreaza_dupa_concentratie(ServiceMed* service, List* list, double c1, double c2)
+{
+	for (int i = 0; i < service->repo->lista_med->size; i++)
+		if (((Medicament*)service->repo->lista_med->elems[i])->concentratie - c1 > 0 &&
+			((Medicament*)service->repo->lista_med->elems[i])->concentratie - c2 < 0)
+		{
+			Medicament* copy = copiaza_medicament(service->repo->lista_med->elems[i]);
+			add(list, copy);
+		}
+}
+
+
 /* Adauga medicamente default la lista de medicamente
 *  service: serviciul de medicamente dat
 */
@@ -156,4 +201,18 @@ void adauga_default(ServiceMed* service)
 	adauga_medicament(service, 18, "Furosemid", 23.11, 5, errors);
 	adauga_medicament(service, 19, "Cetirizina", 29.2, 21, errors);
 	adauga_medicament(service, 20, "Levotiroxina", 4.2, 16, errors);
+}
+
+/* Functie care realizeaza operatia de undo (restituie ultima versiune a codului, inainte de modificarea suferita)
+ * param: service -> service-ul curent
+ *	return : void
+ */
+void Undo(ServiceMed* service) {
+	if (service->listaUndo->size == 0)
+		return;
+
+	List* ultima_lista = service->listaUndo->elems[service->listaUndo->size - 1];
+	service->listaUndo->size--;
+	destroy_list(service->repo->lista_med);
+	service->repo->lista_med = ultima_lista;
 }

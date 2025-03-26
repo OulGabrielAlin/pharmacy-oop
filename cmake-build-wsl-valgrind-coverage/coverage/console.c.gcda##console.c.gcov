@@ -73,502 +73,579 @@ call    0 returned 1
 call    0 returned 1
         1:   47:	printf("5. Filtreaza dupa nume\n");
 call    0 returned 1
-        1:   48:	printf("P. Afiseaza lista de medicamente ordonate\n");
+        1:   48:	printf("6. Filtreaza dupa concentratie\n");
 call    0 returned 1
-        1:   49:	printf("X. Iesire aplicatie\n");
+        1:   49:	printf("P. Afiseaza lista de medicamente ordonate\n");
 call    0 returned 1
-        1:   50:	printf("*********************************************\n");
+        1:   50:	printf("U. Undo\n");
 call    0 returned 1
-        1:   51:	printf("Alegeti optiunea dorita:\n");
+        1:   51:	printf("X. Iesire aplicatie\n");
 call    0 returned 1
-        -:   52:	
-        1:   53:}
-        -:   54:
-        -:   55:/* Afiseaza un medicament
-        -:   56:*  m: medicament
-        -:   57:*/
+        1:   52:	printf("*********************************************\n");
+call    0 returned 1
+        1:   53:	printf("Alegeti optiunea dorita:\n");
+call    0 returned 1
+        -:   54:	
+        1:   55:}
+        -:   56:
+        -:   57:/* Afiseaza un medicament
+        -:   58:*  m: medicament
+        -:   59:*/
 function afiseaza_medicament called 0 returned 0% blocks executed 0%
-    #####:   58:void afiseaza_medicament(Medicament* m)
-        -:   59:{
-    #####:   60:	printf("Cod: %d\nNume: %s\nConcentratie: %.2lf\nCantitate: %d\n", m->cod, m->nume, m->concentratie, m->cantitate);
-    %%%%%:   60-block  0
+    #####:   60:void afiseaza_medicament(Medicament* m)
+        -:   61:{
+    #####:   62:	printf("Cod: %d\nNume: %s\nConcentratie: %.2lf\nCantitate: %d\n", m->cod, m->nume, m->concentratie, m->cantitate);
+    %%%%%:   62-block  0
 call    0 never executed
-    #####:   61:}
-        -:   62:
-        -:   63:/* Sorteaza lista pe baza datelor citite
-        -:   64:*  consola: consola curenta
-        -:   65:*/
+    #####:   63:}
+        -:   64:
+        -:   65:/* Sorteaza lista pe baza datelor citite
+        -:   66:*  consola: consola curenta
+        -:   67:*/
 function sorteaza_lista_ui called 0 returned 0% blocks executed 0%
-    #####:   66:void sorteaza_lista_ui(Consola* consola)
-        -:   67:{
-    #####:   68:	char input = 0;
-    #####:   69:	printf("crescator/descrescator (c/d):");
-    %%%%%:   69-block  0
+    #####:   68:void sorteaza_lista_ui(Consola* consola)
+        -:   69:{
+    #####:   70:	char input = 0;
+    #####:   71:	printf("crescator/descrescator (c/d):");
+    %%%%%:   71-block  0
 call    0 never executed
-    #####:   70:	int cnt = scanf("\n%c", &input);
+    #####:   72:	int cnt = scanf("\n%c", &input);
 call    0 never executed
-    #####:   71:	if (cnt != 1)
+    #####:   73:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:   72:	{
-    #####:   73:		printf("Nu s-au putut citi datele!");
-    %%%%%:   73-block  0
+        -:   74:	{
+    #####:   75:		printf("Nu s-au putut citi datele!");
+    %%%%%:   75-block  0
 call    0 never executed
-    #####:   74:		return;
-    %%%%%:   74-block  0
-        -:   75:	}
-        -:   76:
-    #####:   77:	switch (input) {
-    %%%%%:   77-block  0
+    #####:   76:		return;
+    %%%%%:   76-block  0
+        -:   77:	}
+        -:   78:
+    #####:   79:	switch (input) {
+    %%%%%:   79-block  0
 branch  0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   78:	case 'c':
-    #####:   79:		sorteaza_medicamente(consola->service, 1);
-    %%%%%:   79-block  0
+    #####:   80:	case 'c':
+    #####:   81:		sorteaza_medicamente(consola->service, 1);
+    %%%%%:   81-block  0
 call    0 never executed
-    #####:   80:		break;
-    #####:   81:	case 'd':
-    #####:   82:		sorteaza_medicamente(consola->service, 0);
-    %%%%%:   82-block  0
+    #####:   82:		break;
+    #####:   83:	case 'd':
+    #####:   84:		sorteaza_medicamente(consola->service, 0);
+    %%%%%:   84-block  0
 call    0 never executed
-    #####:   83:		break;
-    #####:   84:	default:
-    #####:   85:		return;
-    %%%%%:   85-block  0
-        -:   86:	}
-        -:   87:}
-        -:   88:
-        -:   89:/* Afiseaza lista de medicamente
-        -:   90:*  consola: consola curenta
-        -:   91:*/
+    #####:   85:		break;
+    #####:   86:	default:
+    #####:   87:		return;
+    %%%%%:   87-block  0
+        -:   88:	}
+        -:   89:}
+        -:   90:
+        -:   91:/* Afiseaza lista de medicamente
+        -:   92:*  consola: consola curenta
+        -:   93:*/
 function afiseaza_lista called 0 returned 0% blocks executed 0%
-    #####:   92:void afiseaza_lista(Consola* consola)
-        -:   93:{	
-    #####:   94:	sorteaza_lista_ui(consola);
-    %%%%%:   94-block  0
+    #####:   94:void afiseaza_lista(Consola* consola)
+        -:   95:{	
+    #####:   96:	sorteaza_lista_ui(consola);
+    %%%%%:   96-block  0
 call    0 never executed
-        -:   95:
-    #####:   96:	printf("---------------------------\n");
+        -:   97:
+    #####:   98:	printf("---------------------------\n");
 call    0 never executed
-    #####:   97:	for (int i = 0; i < consola->service->repo->lista_med->size; i++)
-    %%%%%:   97-block  0
-branch  0 never executed
-branch  1 never executed (fallthrough)
-        -:   98:	{
-    #####:   99:		afiseaza_medicament(consola->service->repo->lista_med->elems[i]);
+    #####:   99:	for (int i = 0; i < consola->service->repo->lista_med->size; i++)
     %%%%%:   99-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:  100:	{
+    #####:  101:		afiseaza_medicament(consola->service->repo->lista_med->elems[i]);
+    %%%%%:  101-block  0
 call    0 never executed
-    #####:  100:		printf("---------------------------\n");
+    #####:  102:		printf("---------------------------\n");
 call    0 never executed
-        -:  101:	}
-    #####:  102:}
-        -:  103:
-        -:  104:/* Citeste datele unui medicament
-        -:  105:*  cod: codul citit
-        -:  106:*  nume: numele citit
-        -:  107:*  concentratie: concentratia citita
-        -:  108:*  cantitate: cantitatea citita
-        -:  109:*/
+        -:  103:	}
+    #####:  104:}
+        -:  105:
+        -:  106:/* Citeste datele unui medicament
+        -:  107:*  cod: codul citit
+        -:  108:*  nume: numele citit
+        -:  109:*  concentratie: concentratia citita
+        -:  110:*  cantitate: cantitatea citita
+        -:  111:*/
 function citeste_date called 0 returned 0% blocks executed 0%
-    #####:  110:void citeste_date(int* cod, char nume[], float* concentratie, int* cantitate)
-        -:  111:{
-        -:  112:	int cnt;
-    #####:  113:	printf("Cod: ");
-    %%%%%:  113-block  0
+    #####:  112:void citeste_date(int* cod, char nume[], float* concentratie, int* cantitate)
+        -:  113:{
+        -:  114:	int cnt;
+    #####:  115:	printf("Cod: ");
+    %%%%%:  115-block  0
 call    0 never executed
-    #####:  114:	cnt =  scanf("%d", cod);
+    #####:  116:	cnt =  scanf("%d", cod);
 call    0 never executed
-    #####:  115:	if (cnt != 1)
+    #####:  117:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  116:	{
-    #####:  117:		printf("Nu s-au putut citi datele!");
-    %%%%%:  117-block  0
+        -:  118:	{
+    #####:  119:		printf("Nu s-au putut citi datele!");
+    %%%%%:  119-block  0
 call    0 never executed
-    #####:  118:		return;
-        -:  119:	}
-        -:  120:
-    #####:  121:	printf("Nume: ");
-    %%%%%:  121-block  0
+    #####:  120:		return;
+        -:  121:	}
+        -:  122:
+    #####:  123:	printf("Nume: ");
+    %%%%%:  123-block  0
 call    0 never executed
-    #####:  122:	cnt = scanf("%s", nume);
+    #####:  124:	cnt = scanf("%s", nume);
 call    0 never executed
-    #####:  123:	if (cnt != 1)
+    #####:  125:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  124:	{
-    #####:  125:		printf("Nu s-au putut citi datele!");
-    %%%%%:  125-block  0
+        -:  126:	{
+    #####:  127:		printf("Nu s-au putut citi datele!");
+    %%%%%:  127-block  0
 call    0 never executed
-    #####:  126:		return;
-        -:  127:	}
-        -:  128:
-    #####:  129:	printf("Concentratie: ");
-    %%%%%:  129-block  0
+    #####:  128:		return;
+        -:  129:	}
+        -:  130:
+    #####:  131:	printf("Concentratie: ");
+    %%%%%:  131-block  0
 call    0 never executed
-    #####:  130:	cnt = scanf("%f", concentratie);
+    #####:  132:	cnt = scanf("%f", concentratie);
 call    0 never executed
-    #####:  131:	if (cnt != 1)
+    #####:  133:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  132:	{
-    #####:  133:		printf("Nu s-au putut citi datele!");
-    %%%%%:  133-block  0
+        -:  134:	{
+    #####:  135:		printf("Nu s-au putut citi datele!");
+    %%%%%:  135-block  0
 call    0 never executed
-    #####:  134:		return;
-        -:  135:	}
-        -:  136:
-    #####:  137:	printf("Cantitate: ");
-    %%%%%:  137-block  0
+    #####:  136:		return;
+        -:  137:	}
+        -:  138:
+    #####:  139:	printf("Cantitate: ");
+    %%%%%:  139-block  0
 call    0 never executed
-    #####:  138:	cnt = scanf("%d", cantitate);
+    #####:  140:	cnt = scanf("%d", cantitate);
 call    0 never executed
-    #####:  139:	if (cnt != 1)
+    #####:  141:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  140:	{
-    #####:  141:		printf("Nu s-au putut citi datele!");
-    %%%%%:  141-block  0
+        -:  142:	{
+    #####:  143:		printf("Nu s-au putut citi datele!");
+    %%%%%:  143-block  0
 call    0 never executed
-    #####:  142:		return;
-        -:  143:	}
-        -:  144:}
-        -:  145:
-        -:  146:/* Adauga un medicament la lista pe baza datelor citite
-        -:  147:*  consola: consola curenta
-        -:  148:*  post: afiseaza erori daca apar
-        -:  149:*/ 
+    #####:  144:		return;
+        -:  145:	}
+        -:  146:}
+        -:  147:
+        -:  148:/* Adauga un medicament la lista pe baza datelor citite
+        -:  149:*  consola: consola curenta
+        -:  150:*  post: afiseaza erori daca apar
+        -:  151:*/ 
 function adauga_medicament_ui called 0 returned 0% blocks executed 0%
-    #####:  150:void adauga_medicament_ui(Consola* consola)
-        -:  151:{
-        -:  152:	int cod, cantitate;
-        -:  153:	float concentratie;
-        -:  154:	char nume[20];
-        -:  155:
-    #####:  156:	citeste_date(&cod, nume, &concentratie, &cantitate);
-    %%%%%:  156-block  0
+    #####:  152:void adauga_medicament_ui(Consola* consola)
+        -:  153:{
+        -:  154:	int cod, cantitate;
+        -:  155:	float concentratie;
+        -:  156:	char nume[20];
+        -:  157:
+    #####:  158:	citeste_date(&cod, nume, &concentratie, &cantitate);
+    %%%%%:  158-block  0
 call    0 never executed
-    #####:  157:	char errors[200] = "";
-    #####:  158:	adauga_medicament(consola->service, cod, nume, concentratie, cantitate, errors);
+    #####:  159:	char errors[200] = "";
+    #####:  160:	adauga_medicament(consola->service, cod, nume, concentratie, cantitate, errors);
 call    0 never executed
-        -:  159:
-    #####:  160:	if (strlen(errors) > 0)
+        -:  161:
+    #####:  162:	if (strlen(errors) > 0)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  161:	{
-    #####:  162:		printf("\n---------------------------\n");
-    %%%%%:  162-block  0
+        -:  163:	{
+    #####:  164:		printf("\n---------------------------\n");
+    %%%%%:  164-block  0
 call    0 never executed
-    #####:  163:		printf("%s", errors);
+    #####:  165:		printf("%s", errors);
 call    0 never executed
-    #####:  164:		printf("---------------------------\n");
+    #####:  166:		printf("---------------------------\n");
 call    0 never executed
-        -:  165:	}
-    #####:  166:}
-        -:  167:
-        -:  168:/* Modifica un medicament pe baza datelor citite
-        -:  169:*  consola: consola curenta
-        -:  170:*  post: afiseaza erori daca apar
-        -:  171:*/
-        -:  172:
+        -:  167:	}
+    #####:  168:}
+        -:  169:
+        -:  170:/* Modifica un medicament pe baza datelor citite
+        -:  171:*  consola: consola curenta
+        -:  172:*  post: afiseaza erori daca apar
+        -:  173:*/
+        -:  174:
 function modifica_medicament_ui called 0 returned 0% blocks executed 0%
-    #####:  173:void modifica_medicament_ui(Consola* consola)
-        -:  174:{
-        -:  175:	int cod, cnt;
-        -:  176:	char nume[20];
-        -:  177:	float concentratie;
-        -:  178:
-    #####:  179:	printf("Cod: ");
-    %%%%%:  179-block  0
+    #####:  175:void modifica_medicament_ui(Consola* consola)
+        -:  176:{
+        -:  177:	int cod, cnt;
+        -:  178:	char nume[20];
+        -:  179:	float concentratie;
+        -:  180:
+    #####:  181:	printf("Cod: ");
+    %%%%%:  181-block  0
 call    0 never executed
-    #####:  180:	cnt = scanf("%d",&cod);
+    #####:  182:	cnt = scanf("%d",&cod);
 call    0 never executed
-    #####:  181:	if (cnt != 1)
+    #####:  183:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  182:	{
-    #####:  183:		printf("Nu s-au putut citi datele!");
-    %%%%%:  183-block  0
+        -:  184:	{
+    #####:  185:		printf("Nu s-au putut citi datele!");
+    %%%%%:  185-block  0
 call    0 never executed
-    #####:  184:		return;
-    %%%%%:  184-block  0
-        -:  185:	}
-        -:  186:
-    #####:  187:	printf("Nume: ");
-    %%%%%:  187-block  0
+    #####:  186:		return;
+    %%%%%:  186-block  0
+        -:  187:	}
+        -:  188:
+    #####:  189:	printf("Nume: ");
+    %%%%%:  189-block  0
 call    0 never executed
-    #####:  188:	cnt = scanf("%s", nume);
+    #####:  190:	cnt = scanf("%s", nume);
 call    0 never executed
-    #####:  189:	if (cnt != 1)
+    #####:  191:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  190:	{
-    #####:  191:		printf("Nu s-au putut citi datele!");
-    %%%%%:  191-block  0
+        -:  192:	{
+    #####:  193:		printf("Nu s-au putut citi datele!");
+    %%%%%:  193-block  0
 call    0 never executed
-    #####:  192:		return;
-        -:  193:	}
-        -:  194:
-    #####:  195:	printf("Concentratie: ");
-    %%%%%:  195-block  0
+    #####:  194:		return;
+        -:  195:	}
+        -:  196:
+    #####:  197:	printf("Concentratie: ");
+    %%%%%:  197-block  0
 call    0 never executed
-    #####:  196:	cnt = scanf("%f", &concentratie);
+    #####:  198:	cnt = scanf("%f", &concentratie);
 call    0 never executed
-    #####:  197:	if (cnt != 1)
+    #####:  199:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  198:	{
-    #####:  199:		printf("Nu s-au putut citi datele!");
-    %%%%%:  199-block  0
+        -:  200:	{
+    #####:  201:		printf("Nu s-au putut citi datele!");
+    %%%%%:  201-block  0
 call    0 never executed
-    #####:  200:		return;
-        -:  201:	}
-        -:  202:
-    #####:  203:	char errors[200] = "";
-    #####:  204:	modifica_medicament(consola->service, cod, nume, concentratie, errors);
-    %%%%%:  204-block  0
+    #####:  202:		return;
+        -:  203:	}
+        -:  204:
+    #####:  205:	char errors[200] = "";
+    #####:  206:	modifica_medicament(consola->service, cod, nume, concentratie, errors);
+    %%%%%:  206-block  0
 call    0 never executed
-        -:  205:
-    #####:  206:	if (strlen(errors) > 0)
+        -:  207:
+    #####:  208:	if (strlen(errors) > 0)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  207:	{
-    #####:  208:		printf("\n---------------------------\n");
-    %%%%%:  208-block  0
+        -:  209:	{
+    #####:  210:		printf("\n---------------------------\n");
+    %%%%%:  210-block  0
 call    0 never executed
-    #####:  209:		printf("%s", errors);
+    #####:  211:		printf("%s", errors);
 call    0 never executed
-    #####:  210:		printf("---------------------------\n");
+    #####:  212:		printf("---------------------------\n");
 call    0 never executed
-        -:  211:	}
-        -:  212:}
-        -:  213:
-        -:  214:/* Sterge un medicament din lista pe baza datelor citite
-        -:  215:*  consola: consola curenta
-        -:  216:*  post: afiseaza erori daca apar
-        -:  217:*/
+        -:  213:	}
+        -:  214:}
+        -:  215:
+        -:  216:/* Sterge un medicament din lista pe baza datelor citite
+        -:  217:*  consola: consola curenta
+        -:  218:*  post: afiseaza erori daca apar
+        -:  219:*/
 function sterge_medicament_ui called 0 returned 0% blocks executed 0%
-    #####:  218:void sterge_medicament_ui(Consola* consola)
-        -:  219:{
-    #####:  220:	int cod = -1, cnt;
-    #####:  221:	printf("Cod: ");
-    %%%%%:  221-block  0
+    #####:  220:void sterge_medicament_ui(Consola* consola)
+        -:  221:{
+    #####:  222:	int cod = -1, cnt;
+    #####:  223:	printf("Cod: ");
+    %%%%%:  223-block  0
 call    0 never executed
-    #####:  222:	cnt = scanf("%d", &cod);
+    #####:  224:	cnt = scanf("%d", &cod);
 call    0 never executed
-    #####:  223:	if (cnt != 1)
+    #####:  225:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  224:	{
-    #####:  225:		printf("Nu s-au putut citi datele!");
-    %%%%%:  225-block  0
+        -:  226:	{
+    #####:  227:		printf("Nu s-au putut citi datele!");
+    %%%%%:  227-block  0
 call    0 never executed
-    #####:  226:		return;
-        -:  227:	}
-        -:  228:
-    #####:  229:	int status = sterge_medicament(consola->service, cod);
-    %%%%%:  229-block  0
+    #####:  228:		return;
+        -:  229:	}
+        -:  230:
+    #####:  231:	int status = sterge_medicament(consola->service, cod);
+    %%%%%:  231-block  0
 call    0 never executed
-    #####:  230:	if (status == 0)
+    #####:  232:	if (status == 0)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  231:	{
-    #####:  232:		printf("\n---------------------------\n");
-    %%%%%:  232-block  0
+        -:  233:	{
+    #####:  234:		printf("\n---------------------------\n");
+    %%%%%:  234-block  0
 call    0 never executed
-    #####:  233:		printf("Medicamentul cu codul dat nu exista\n");
+    #####:  235:		printf("Medicamentul cu codul dat nu exista\n");
 call    0 never executed
-    #####:  234:		printf("---------------------------\n");
+    #####:  236:		printf("---------------------------\n");
 call    0 never executed
-        -:  235:	}
-        -:  236:}
-        -:  237:
-        -:  238:/* Afiseaza medicamentele care au cantitatea mai mica decat o valoare citita
-        -:  239:*  consola: consola curenta
-        -:  240:*/
+        -:  237:	}
+        -:  238:}
+        -:  239:
+        -:  240:/* Afiseaza medicamentele care au cantitatea mai mica decat o valoare citita
+        -:  241:*  consola: consola curenta
+        -:  242:*/
 function filtreaza_dupa_cantitate_ui called 0 returned 0% blocks executed 0%
-    #####:  241:void filtreaza_dupa_cantitate_ui(Consola* consola)
-        -:  242:{
-        -:  243:	int cantitate;
-        -:  244:	int cnt;
-        -:  245:
-    #####:  246:	printf("Cantitate: ");
-    %%%%%:  246-block  0
+    #####:  243:void filtreaza_dupa_cantitate_ui(Consola* consola)
+        -:  244:{
+        -:  245:	int cantitate;
+        -:  246:	int cnt;
+        -:  247:
+    #####:  248:	printf("Cantitate: ");
+    %%%%%:  248-block  0
 call    0 never executed
-    #####:  247:	cnt = scanf("%d", &cantitate);
+    #####:  249:	cnt = scanf("%d", &cantitate);
 call    0 never executed
-    #####:  248:	if (cnt != 1)
+    #####:  250:	if (cnt != 1)
 branch  0 never executed (fallthrough)
 branch  1 never executed
-        -:  249:	{
-    #####:  250:		printf("Nu s-au putut citi datele!");
-    %%%%%:  250-block  0
+        -:  251:	{
+    #####:  252:		printf("Nu s-au putut citi datele!");
+    %%%%%:  252-block  0
 call    0 never executed
-    #####:  251:		return;
-        -:  252:	}
-        -:  253:
-    #####:  254:	List* list = creeaza_lista();
-    %%%%%:  254-block  0
+    #####:  253:		return;
+        -:  254:	}
+        -:  255:
+    #####:  256:	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+    %%%%%:  256-block  0
 call    0 never executed
-    #####:  255:	filtreaza_dupa_cantitate(consola->service, list, cantitate);
+    #####:  257:	filtreaza_dupa_cantitate(consola->service, list, cantitate);
 call    0 never executed
-        -:  256:
-    #####:  257:	printf("---------------------------\n");
+        -:  258:
+    #####:  259:	printf("---------------------------\n");
 call    0 never executed
-    #####:  258:	for (int i = 0; i < list->size; i++)
-    %%%%%:  258-block  0
-branch  0 never executed
-branch  1 never executed (fallthrough)
-        -:  259:	{
-    #####:  260:		afiseaza_medicament(list->elems[i]);
+    #####:  260:	for (int i = 0; i < list->size; i++)
     %%%%%:  260-block  0
-call    0 never executed
-    #####:  261:		printf("---------------------------\n");
-call    0 never executed
-        -:  262:	}
-    #####:  263:	destroy_list(list);
-    %%%%%:  263-block  0
-call    0 never executed
-        -:  264:}
-        -:  265:
-        -:  266:/* Afiseaza medicamentele a caror prima litera din nume este aceeasi cu o litera citita
-        -:  267:*  consola: consola curenta
-        -:  268:*/
-function filtreaza_dupa_nume_ui called 0 returned 0% blocks executed 0%
-    #####:  269:void filtreaza_dupa_nume_ui(Consola* consola)
-        -:  270:{
-        -:  271:	char c[5];
-        -:  272:	int cnt;
-        -:  273:
-    #####:  274:	printf("Litera: ");
-    %%%%%:  274-block  0
-call    0 never executed
-    #####:  275:	cnt = scanf("%s", c);
-call    0 never executed
-    #####:  276:	if (cnt != 1)
-branch  0 never executed (fallthrough)
-branch  1 never executed
-        -:  277:	{
-    #####:  278:		printf("Nu s-au putut citi datele!");
-    %%%%%:  278-block  0
-call    0 never executed
-    #####:  279:		return;
-        -:  280:	}
-        -:  281:
-    #####:  282:	List* list = creeaza_lista();
-    %%%%%:  282-block  0
-call    0 never executed
-    #####:  283:	filtreaza_dupa_nume(consola->service, list, c[0]);
-call    0 never executed
-        -:  284:
-    #####:  285:	printf("---------------------------\n");
-call    0 never executed
-    #####:  286:	for (int i = 0; i < list->size; i++)
-    %%%%%:  286-block  0
 branch  0 never executed
 branch  1 never executed (fallthrough)
-        -:  287:	{
-    #####:  288:		afiseaza_medicament(list->elems[i]);
+        -:  261:	{
+    #####:  262:		afiseaza_medicament(list->elems[i]);
+    %%%%%:  262-block  0
+call    0 never executed
+    #####:  263:		printf("---------------------------\n");
+call    0 never executed
+        -:  264:	}
+    #####:  265:	destroy_list(list);
+    %%%%%:  265-block  0
+call    0 never executed
+        -:  266:}
+        -:  267:
+        -:  268:/* Afiseaza medicamentele a caror prima litera din nume este aceeasi cu o litera citita
+        -:  269:*  consola: consola curenta
+        -:  270:*/
+function filtreaza_dupa_nume_ui called 0 returned 0% blocks executed 0%
+    #####:  271:void filtreaza_dupa_nume_ui(Consola* consola)
+        -:  272:{
+        -:  273:	char c[5];
+        -:  274:	int cnt;
+        -:  275:
+    #####:  276:	printf("Litera: ");
+    %%%%%:  276-block  0
+call    0 never executed
+    #####:  277:	cnt = scanf("%s", c);
+call    0 never executed
+    #####:  278:	if (cnt != 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  279:	{
+    #####:  280:		printf("Nu s-au putut citi datele!");
+    %%%%%:  280-block  0
+call    0 never executed
+    #####:  281:		return;
+        -:  282:	}
+        -:  283:
+    #####:  284:	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+    %%%%%:  284-block  0
+call    0 never executed
+    #####:  285:	filtreaza_dupa_nume(consola->service, list, c[0]);
+call    0 never executed
+        -:  286:
+    #####:  287:	printf("---------------------------\n");
+call    0 never executed
+    #####:  288:	for (int i = 0; i < list->size; i++)
     %%%%%:  288-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:  289:	{
+    #####:  290:		afiseaza_medicament(list->elems[i]);
+    %%%%%:  290-block  0
 call    0 never executed
-    #####:  289:		printf("---------------------------\n");
+    #####:  291:		printf("---------------------------\n");
 call    0 never executed
-        -:  290:	}
-        -:  291:
-    #####:  292:	destroy_list(list);
-    %%%%%:  292-block  0
+        -:  292:	}
+        -:  293:
+    #####:  294:	destroy_list(list);
+    %%%%%:  294-block  0
 call    0 never executed
-        -:  293:}
-        -:  294:
-function run called 1 returned 100% blocks executed 48%
-        1:  295:void run(Consola* consola)
-        -:  296:{
-        1:  297:	int is_running = 1;
-        1:  298:	run_tests();
-        1:  298-block  0
+        -:  295:}
+        -:  296:
+        -:  297:/* Afiseaza medicamentele a caror concentratie se afla intre doua valori date
+        -:  298:*  consola: consola curenta
+        -:  299:*/
+function filtreaza_dupa_concentratie_ui called 0 returned 0% blocks executed 0%
+    #####:  300:void filtreaza_dupa_concentratie_ui(Consola* consola)
+        -:  301:{
+        -:  302:	double c1, c2;
+        -:  303:	int cnt1, cnt2;
+        -:  304:
+    #####:  305:	printf("Limita inferioara de concentratie: ");
+    %%%%%:  305-block  0
+call    0 never executed
+    #####:  306:	cnt1 = scanf("%lf", &c1);
+call    0 never executed
+        -:  307:
+    #####:  308:	printf("Limita superioara de concentratie: ");
+call    0 never executed
+    #####:  309:	cnt2 = scanf("%lf", &c2);
+call    0 never executed
+        -:  310:
+        -:  311:
+    #####:  312:	if (cnt1 != 1 || cnt2 != 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  312-block  0
+branch  2 never executed (fallthrough)
+branch  3 never executed
+        -:  313:	{
+    #####:  314:		printf("Nu s-au putut citi datele!");
+    %%%%%:  314-block  0
+call    0 never executed
+    #####:  315:		return;
+        -:  316:	}
+        -:  317:
+    #####:  318:	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+    %%%%%:  318-block  0
+call    0 never executed
+    #####:  319:	filtreaza_dupa_concentratie(consola->service, list, c1, c2);
+call    0 never executed
+        -:  320:
+    #####:  321:	printf("---------------------------\n");
+call    0 never executed
+    #####:  322:	for (int i = 0; i < list->size; i++)
+    %%%%%:  322-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:  323:	{
+    #####:  324:		afiseaza_medicament(list->elems[i]);
+    %%%%%:  324-block  0
+call    0 never executed
+    #####:  325:		printf("---------------------------\n");
+call    0 never executed
+        -:  326:	}
+        -:  327:
+    #####:  328:	destroy_list(list);
+    %%%%%:  328-block  0
+call    0 never executed
+        -:  329:}
+        -:  330:
+function run called 1 returned 100% blocks executed 42%
+        1:  331:void run(Consola* consola)
+        -:  332:{
+        1:  333:	int is_running = 1;
+        1:  334:	run_tests();
+        1:  334-block  0
 call    0 returned 1
-        1:  299:	printf("Testele au trecut cu succes!\n\n");
+        1:  335:	printf("Testele au trecut cu succes!\n\n");
 call    0 returned 1
-        1:  300:	adauga_default(consola->service);
+        1:  336:	adauga_default(consola->service);
 call    0 returned 1
-        -:  301:
-        2:  302:	while (is_running)
-        2:  302-block  0
+        -:  337:
+        2:  338:	while (is_running)
+        2:  338-block  0
 branch  0 taken 1
 branch  1 taken 1 (fallthrough)
-        -:  303:	{
-        1:  304:		afiseaza_meniu();
-        1:  304-block  0
+        -:  339:	{
+        1:  340:		afiseaza_meniu();
+        1:  340-block  0
 call    0 returned 1
-        -:  305:		char optiune[2];
-        -:  306:		int cnt;
-        1:  307:		cnt = scanf("%s", optiune);
+        -:  341:		char optiune[2];
+        -:  342:		int cnt;
+        1:  343:		cnt = scanf("%s", optiune);
 call    0 returned 1
-        1:  308:		if (cnt != 1)
+        1:  344:		if (cnt != 1)
 branch  0 taken 0 (fallthrough)
 branch  1 taken 1
-        -:  309:		{
-    #####:  310:			printf("Nu s-au putut citi datele!");
-    %%%%%:  310-block  0
+        -:  345:		{
+    #####:  346:			printf("Nu s-au putut citi datele!");
+    %%%%%:  346-block  0
 call    0 never executed
-    #####:  311:			return;
-        -:  312:		}
-        1:  313:		printf("\n");
-        1:  313-block  0
+    #####:  347:			return;
+        -:  348:		}
+        1:  349:		printf("\n");
+        1:  349-block  0
 call    0 returned 1
-        -:  314:		
-        1:  315:		optiune[0] = toupper(optiune[0]);
-        1:  316:		switch (optiune[0]) {
+        -:  350:		
+        1:  351:		optiune[0] = toupper(optiune[0]);
+        1:  352:		switch (optiune[0]) {
 branch  0 taken 0
 branch  1 taken 0
 branch  2 taken 0
 branch  3 taken 0
 branch  4 taken 0
 branch  5 taken 0
-branch  6 taken 1
+branch  6 taken 0
 branch  7 taken 0
-    #####:  317:			case '1':
-    #####:  318:				adauga_medicament_ui(consola);
-    %%%%%:  318-block  0
+branch  8 taken 1
+branch  9 taken 0
+    #####:  353:			case '1':
+    #####:  354:				adauga_medicament_ui(consola);
+    %%%%%:  354-block  0
 call    0 never executed
-    #####:  319:				break;
-        -:  320:
-    #####:  321:			case '2':
-    #####:  322:				modifica_medicament_ui(consola);
-    %%%%%:  322-block  0
+    #####:  355:				break;
+        -:  356:
+    #####:  357:			case '2':
+    #####:  358:				modifica_medicament_ui(consola);
+    %%%%%:  358-block  0
 call    0 never executed
-    #####:  323:				break;
-        -:  324:
-    #####:  325:			case '3':
-    #####:  326:				sterge_medicament_ui(consola);
-    %%%%%:  326-block  0
+    #####:  359:				break;
+        -:  360:
+    #####:  361:			case '3':
+    #####:  362:				sterge_medicament_ui(consola);
+    %%%%%:  362-block  0
 call    0 never executed
-    #####:  327:				break;
-        -:  328:
-    #####:  329:			case '4':
-    #####:  330:				filtreaza_dupa_cantitate_ui(consola);
-    %%%%%:  330-block  0
+    #####:  363:				break;
+        -:  364:
+    #####:  365:			case '4':
+    #####:  366:				filtreaza_dupa_cantitate_ui(consola);
+    %%%%%:  366-block  0
 call    0 never executed
-    #####:  331:				break;
-        -:  332:
-    #####:  333:			case '5':
-    #####:  334:				filtreaza_dupa_nume_ui(consola);
-    %%%%%:  334-block  0
+    #####:  367:				break;
+        -:  368:
+    #####:  369:			case '5':
+    #####:  370:				filtreaza_dupa_nume_ui(consola);
+    %%%%%:  370-block  0
 call    0 never executed
-    #####:  335:				break;
-        -:  336:
-    #####:  337:			case 'P':
-    #####:  338:				afiseaza_lista(consola);
-    %%%%%:  338-block  0
+    #####:  371:				break;
+        -:  372:
+    #####:  373:			case '6':
+    #####:  374:				filtreaza_dupa_concentratie_ui(consola);
+    %%%%%:  374-block  0
 call    0 never executed
-    #####:  339:				break;
-        -:  340:
-        1:  341:			case 'X':
-        1:  342:				is_running = 0;
-        1:  343:				break;
-        1:  343-block  0
-        -:  344:
-        -:  345:		}
-        -:  346:	}
-        -:  347:}
+    #####:  375:				break;
+        -:  376:
+    #####:  377:			case 'P':
+    #####:  378:				afiseaza_lista(consola);
+    %%%%%:  378-block  0
+call    0 never executed
+    #####:  379:				break;
+        -:  380:
+    #####:  381:			case 'U':
+    #####:  382:				Undo(consola->service);
+    %%%%%:  382-block  0
+call    0 never executed
+    #####:  383:				break;
+        -:  384:
+        1:  385:			case 'X':
+        1:  386:				is_running = 0;
+        1:  387:				break;
+        1:  387-block  0
+        -:  388:
+        -:  389:		}
+        -:  390:	}
+        -:  391:}

@@ -18,6 +18,7 @@ void sterge_medicament_ui(Consola* consola);
 void sorteaza_lista_ui(Consola* consola);
 void filtreaza_dupa_cantitate_ui(Consola* consola);
 void filtreaza_dupa_nume_ui(Consola* consola);
+void filtreaza_dupa_concentratie_ui(Consola* consola);
 void distruge_consola(Consola* consola);
 
 #endif

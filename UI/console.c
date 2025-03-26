@@ -45,7 +45,9 @@ void afiseaza_meniu()
 	printf("3. Sterge medicament\n");
 	printf("4. Filtreaza dupa cantitate\n");
 	printf("5. Filtreaza dupa nume\n");
+	printf("6. Filtreaza dupa concentratie\n");
 	printf("P. Afiseaza lista de medicamente ordonate\n");
+	printf("U. Undo\n");
 	printf("X. Iesire aplicatie\n");
 	printf("*********************************************\n");
 	printf("Alegeti optiunea dorita:\n");
@@ -251,7 +253,7 @@ void filtreaza_dupa_cantitate_ui(Consola* consola)
 		return;
 	}
 
-	List* list = creeaza_lista();
+	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 	filtreaza_dupa_cantitate(consola->service, list, cantitate);
 
 	printf("---------------------------\n");
@@ -279,8 +281,42 @@ void filtreaza_dupa_nume_ui(Consola* consola)
 		return;
 	}
 
-	List* list = creeaza_lista();
+	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 	filtreaza_dupa_nume(consola->service, list, c[0]);
+
+	printf("---------------------------\n");
+	for (int i = 0; i < list->size; i++)
+	{
+		afiseaza_medicament(list->elems[i]);
+		printf("---------------------------\n");
+	}
+
+	destroy_list(list);
+}
+
+/* Afiseaza medicamentele a caror concentratie se afla intre doua valori date
+*  consola: consola curenta
+*/
+void filtreaza_dupa_concentratie_ui(Consola* consola)
+{
+	double c1, c2;
+	int cnt1, cnt2;
+
+	printf("Limita inferioara de concentratie: ");
+	cnt1 = scanf("%lf", &c1);
+
+	printf("Limita superioara de concentratie: ");
+	cnt2 = scanf("%lf", &c2);
+
+
+	if (cnt1 != 1 || cnt2 != 1)
+	{
+		printf("Nu s-au putut citi datele!");
+		return;
+	}
+
+	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+	filtreaza_dupa_concentratie(consola->service, list, c1, c2);
 
 	printf("---------------------------\n");
 	for (int i = 0; i < list->size; i++)
@@ -334,8 +370,16 @@ void run(Consola* consola)
 				filtreaza_dupa_nume_ui(consola);
 				break;
 
+			case '6':
+				filtreaza_dupa_concentratie_ui(consola);
+				break;
+
 			case 'P':
 				afiseaza_lista(consola);
+				break;
+
+			case 'U':
+				Undo(consola->service);
 				break;
 
 			case 'X':

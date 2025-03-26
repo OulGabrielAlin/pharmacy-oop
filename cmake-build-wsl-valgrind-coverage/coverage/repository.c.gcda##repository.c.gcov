@@ -10,14 +10,14 @@
         -:    6:/*Creeaza un obiect de tip repository pentru medicamente
         -:    7:  return: un repository care nu contine elemente
         -:    8:*/
-function creeaza_repo called 11 returned 100% blocks executed 62%
-       11:    9:Repo* creeaza_repo()
+function creeaza_repo called 13 returned 100% blocks executed 62%
+       13:    9:Repo* creeaza_repo()
         -:   10:{
-       11:   11:	Repo* repo = malloc(sizeof(Repo));
-       11:   12:	if (repo == NULL)
-       11:   12-block  0
+       13:   11:	Repo* repo = malloc(sizeof(Repo));
+       13:   12:	if (repo == NULL)
+       13:   12-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 11
+branch  1 taken 13
         -:   13:	{
     #####:   14:		perror("Couldn't find memory");
     %%%%%:   14-block  0
@@ -25,32 +25,32 @@ call    0 never executed
     #####:   15:		return NULL;
         -:   16:	}
         -:   17:
-       11:   18:	repo->lista_med = creeaza_lista();
-       11:   18-block  0
-call    0 returned 11
-       11:   19:	if (repo->lista_med == NULL)
+       13:   18:	repo->lista_med = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+       13:   18-block  0
+call    0 returned 13
+       13:   19:	if (repo->lista_med == NULL)
 branch  0 taken 0 (fallthrough)
-branch  1 taken 11
+branch  1 taken 13
     #####:   20:		return NULL;
     %%%%%:   20-block  0
         -:   21:
-       11:   22:	return repo;
-       11:   22-block  0
+       13:   22:	return repo;
+       13:   22-block  0
         -:   23:}
         -:   24:
         -:   25:/*Adauga un medicament la lista de medicamente
         -:   26:* repo: repository-ul curent
         -:   27:* m: medicamentul adaugat
         -:   28:*/
-function store called 47 returned 100% blocks executed 100%
-       47:   29:void store(Repo* repo, Medicament* m)
+function store called 59 returned 100% blocks executed 100%
+       59:   29:void store(Repo* repo, Medicament* m)
         -:   30:{
-       47:   31:	int poz = find(repo, m->cod);
-       47:   31-block  0
-call    0 returned 47
-       47:   32:	if (poz != -1)
+       59:   31:	int poz = find(repo, m->cod);
+       59:   31-block  0
+call    0 returned 59
+       59:   32:	if (poz != -1)
 branch  0 taken 2 (fallthrough)
-branch  1 taken 45
+branch  1 taken 57
         -:   33:	{
         2:   34:		if (strcmp(m->nume, ((Medicament*)(repo->lista_med->elems[poz]))->nume) == 0 &&
         2:   34-block  0
@@ -69,9 +69,9 @@ call    0 returned 2
         2:   39:		return;
         -:   40:	}
         -:   41:
-       45:   42:	add(repo->lista_med, m);
-       45:   42-block  0
-call    0 returned 45
+       57:   42:	add(repo->lista_med, m);
+       57:   42-block  0
+call    0 returned 57
         -:   43:}
         -:   44:
         -:   45:/*Returneaza pozitia in lista a medicamentului care are un cod dat sau -1 daca el nu se afla in lista
@@ -79,24 +79,24 @@ call    0 returned 45
         -:   47:  cod: codul medicamentului cautat
         -:   48:  return: pozitia medicamentului sau -1
         -:   49:*/
-function find called 66 returned 100% blocks executed 100%
-       66:   50:int find(Repo* repo, int cod)
+function find called 94 returned 100% blocks executed 100%
+       94:   50:int find(Repo* repo, int cod)
         -:   51:{
-      200:   52:	for (int i = 0; i < repo->lista_med->size; i++)
-       66:   52-block  0
-      134:   52-block  1
-      200:   52-block  2
-branch  0 taken 150
-branch  1 taken 50 (fallthrough)
-      150:   53:		if (((Medicament*)repo->lista_med->elems[i])->cod == cod)
-      150:   53-block  0
-branch  0 taken 16 (fallthrough)
-branch  1 taken 134
-       16:   54:			return i;
-       16:   54-block  0
+      280:   52:	for (int i = 0; i < repo->lista_med->size; i++)
+       94:   52-block  0
+      186:   52-block  1
+      280:   52-block  2
+branch  0 taken 209
+branch  1 taken 71 (fallthrough)
+      209:   53:		if (((Medicament*)repo->lista_med->elems[i])->cod == cod)
+      209:   53-block  0
+branch  0 taken 23 (fallthrough)
+branch  1 taken 186
+       23:   54:			return i;
+       23:   54-block  0
         -:   55:
-       50:   56:	return -1;
-       50:   56-block  0
+       71:   56:	return -1;
+       71:   56-block  0
         -:   57:}
         -:   58:
         -:   59:/* Modifica numele si concentratie medicamentului care are un cod dat
@@ -106,34 +106,34 @@ branch  1 taken 134
         -:   63:*  concentratie: noua concentratie
         -:   64:*  return: 1 daca modificarea a avut loc, 0 in caz contrar
         -:   65:*/ 
-function update called 4 returned 100% blocks executed 86%
-        4:   66:int update(Repo* repo, int cod, char nume[], float concentratie)
+function update called 6 returned 100% blocks executed 86%
+        6:   66:int update(Repo* repo, int cod, char nume[], float concentratie)
         -:   67:{
-        4:   68:	int poz = find(repo, cod);
-        4:   68-block  0
-call    0 returned 4
+        6:   68:	int poz = find(repo, cod);
+        6:   68-block  0
+call    0 returned 6
         -:   69:
-        4:   70:	if (poz == -1)
+        6:   70:	if (poz == -1)
 branch  0 taken 2 (fallthrough)
-branch  1 taken 2
+branch  1 taken 4
         2:   71:		return 0;
         2:   71-block  0
         -:   72:
-        2:   73:	free(((Medicament*)repo->lista_med->elems[poz])->nume);
-        2:   74:	((Medicament*)repo->lista_med->elems[poz])->nume = malloc(sizeof(char) * (strlen(nume) + 1));
+        4:   73:	free(((Medicament*)repo->lista_med->elems[poz])->nume);
+        4:   74:	((Medicament*)repo->lista_med->elems[poz])->nume = malloc(sizeof(char) * (strlen(nume) + 1));
         -:   75:
-        2:   76:	if (((Medicament*)repo->lista_med->elems[poz])->nume == NULL)
-        2:   76-block  0
+        4:   76:	if (((Medicament*)repo->lista_med->elems[poz])->nume == NULL)
+        4:   76-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 2
+branch  1 taken 4
     #####:   77:		return 1;
     %%%%%:   77-block  0
         -:   78:
-        2:   79:	strcpy(((Medicament*)repo->lista_med->elems[poz])->nume, nume);
-        2:   80:	((Medicament*)repo->lista_med->elems[poz])->concentratie = concentratie;
+        4:   79:	strcpy(((Medicament*)repo->lista_med->elems[poz])->nume, nume);
+        4:   80:	((Medicament*)repo->lista_med->elems[poz])->concentratie = concentratie;
         -:   81:	
-        2:   82:	return 1;
-        2:   82-block  0
+        4:   82:	return 1;
+        4:   82-block  0
         -:   83:}
         -:   84:
         -:   85:/* Sterge un medicament din lista dupa un cod dat
@@ -141,32 +141,32 @@ branch  1 taken 2
         -:   87:*  cod: codul medicamentului
         -:   88:*  return: 1 daca stergerea a avut loc, 0 in caz contrar
         -:   89:*/
-function erase called 13 returned 100% blocks executed 100%
-       13:   90:int erase(Repo* repo, int cod)
+function erase called 15 returned 100% blocks executed 100%
+       15:   90:int erase(Repo* repo, int cod)
         -:   91:{
-       13:   92:	int poz = find(repo, cod);
-       13:   92-block  0
-call    0 returned 13
-       13:   93:	if (poz == -1)
+       15:   92:	int poz = find(repo, cod);
+       15:   92-block  0
+call    0 returned 15
+       15:   93:	if (poz == -1)
 branch  0 taken 2 (fallthrough)
-branch  1 taken 11
+branch  1 taken 13
         2:   94:		return 0;
         2:   94-block  0
         -:   95:	
-       11:   96:	delete(repo->lista_med, poz);
-       11:   96-block  0
-call    0 returned 11
-       11:   97:	return 1;
+       13:   96:	delete(repo->lista_med, poz);
+       13:   96-block  0
+call    0 returned 13
+       13:   97:	return 1;
         -:   98:}
         -:   99:
         -:  100:/* Elibereaza memoria ocupata de repository
         -:  101:*  post: repository-ul este distrus
         -:  102:*/
-function distruge_repo called 11 returned 100% blocks executed 100%
-       11:  103:void distruge_repo(Repo* repo)
+function distruge_repo called 13 returned 100% blocks executed 100%
+       13:  103:void distruge_repo(Repo* repo)
         -:  104:{
-       11:  105:	destroy_list(repo->lista_med);
-       11:  105-block  0
-call    0 returned 11
-       11:  106:	free(repo);
-       11:  107:}
+       13:  105:	destroy_list(repo->lista_med);
+       13:  105-block  0
+call    0 returned 13
+       13:  106:	free(repo);
+       13:  107:}

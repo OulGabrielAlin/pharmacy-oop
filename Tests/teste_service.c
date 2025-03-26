@@ -175,7 +175,7 @@ void test_filtreaza_dupa_cantitate()
 {
 	ServiceMed* service = creeaza_serviciu();
 
-	List* list = creeaza_lista();
+	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 	char errors[] = "";
 	adauga_medicament(service, 11, "Algocalmin", 12.1, 10, errors);
 	adauga_medicament(service, 12, "Paracetamol", 15.2, 4, errors);
@@ -198,7 +198,7 @@ void test_filtreaza_dupa_nume()
 {
 	ServiceMed* service = creeaza_serviciu();
 
-	List* list = creeaza_lista();
+	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 	char errors[] = "";
 	adauga_medicament(service, 11, "Algocalmin", 12.1, 10, errors);
 	adauga_medicament(service, 12, "Paracetamol", 15.2, 4, errors);
@@ -213,5 +213,120 @@ void test_filtreaza_dupa_nume()
 	assert(((Medicament*)list->elems[1])->cod == 15);
 
 	destroy_list(list);
+	distruge_serviciu(service);
+}
+
+// functie de test pentru filtreaza_dupa_concentratie (service)
+void test_filtreaza_dupa_concentratie()
+{
+	ServiceMed* service = creeaza_serviciu();
+
+	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+	char errors[] = "";
+	adauga_medicament(service, 11, "Algocalmin", 12.1, 10, errors);
+	adauga_medicament(service, 12, "Paracetamol", 15.2, 4, errors);
+	adauga_medicament(service, 13, "Omeprazol", 19.2, 20, errors);
+	adauga_medicament(service, 14, "Amoxicilina", 20.1, 12, errors);
+	adauga_medicament(service, 15, "Prednison", 13.2, 5, errors);
+	assert(strlen(errors) == 0);
+
+	filtreaza_dupa_concentratie(service, list, 10, 15);
+	assert(list->size == 2);
+	assert(((Medicament*)list->elems[0])->cod == 11);
+	assert(((Medicament*)list->elems[1])->cod == 15);
+	destroy_list(list);
+
+	List* list1 = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
+	filtreaza_dupa_concentratie(service, list1, 19, 20);
+	assert(list1->size == 1);
+	assert(((Medicament*)list1->elems[0])->cod == 13);
+
+	destroy_list(list1);
+	distruge_serviciu(service);
+}
+
+// functie de test pentru functia (Service) Undo
+void test_undo() {
+	ServiceMed* service = creeaza_serviciu();
+
+	char errors[] = "";
+	adauga_medicament(service, 11, "Algocalmin", 12.1, 10, errors);
+	adauga_medicament(service, 12, "Paracetamol", 15.2, 4, errors);
+	adauga_medicament(service, 13, "Omeprazol", 19.2, 20, errors);
+	adauga_medicament(service, 14, "Amoxicilina", 20.1, 12, errors);
+	adauga_medicament(service, 15, "Prednison", 13.2, 5, errors);
+	assert(strlen(errors) == 0);
+	assert(service->repo->lista_med->size == 5);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 4);
+	assert(find(service->repo, 15) == -1);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 3);
+	assert(find(service->repo, 14) == -1);
+
+	modifica_medicament(service, 13, "Nospa", 14.3, errors);
+	modifica_medicament(service, 13, "Aspacardin", 15.2, errors);
+	assert(((Medicament*)service->repo->lista_med->elems[2])->cod == 13);
+	assert(strcmp(((Medicament*)service->repo->lista_med->elems[2])->nume, "Aspacardin") == 0);
+	assert(fabs(((Medicament*)service->repo->lista_med->elems[2])->concentratie - 15.2) < 0.0001);
+	assert(((Medicament*)service->repo->lista_med->elems[2])->cantitate == 20);
+
+	Undo(service);
+	assert(((Medicament*)service->repo->lista_med->elems[2])->cod == 13);
+	assert(strcmp(((Medicament*)service->repo->lista_med->elems[2])->nume, "Nospa") == 0);
+	assert(fabs(((Medicament*)service->repo->lista_med->elems[2])->concentratie - 14.3) < 0.0001);
+	assert(((Medicament*)service->repo->lista_med->elems[2])->cantitate == 20);
+
+	Undo(service);
+	assert(((Medicament*)service->repo->lista_med->elems[2])->cod == 13);
+	assert(strcmp(((Medicament*)service->repo->lista_med->elems[2])->nume, "Omeprazol") == 0);
+	assert(fabs(((Medicament*)service->repo->lista_med->elems[2])->concentratie - 19.2) < 0.0001);
+	assert(((Medicament*)service->repo->lista_med->elems[2])->cantitate == 20);
+
+	Undo(service);
+	assert(find(service->repo, 13) == -1);
+	assert(service->repo->lista_med->size == 2);
+
+	adauga_medicament(service, 13, "Omeprazol", 19.2, 20, errors);
+	adauga_medicament(service, 14, "Amoxicilina", 20.1, 12, errors);
+
+	assert(service->repo->lista_med->size == 4);
+	sterge_medicament(service, 11);
+	sterge_medicament(service, 13);
+
+	assert(service->repo->lista_med->size == 2);
+	assert(find(service->repo, 13) == -1);
+	assert(find(service->repo, 11) == -1);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 3);
+	assert(find(service->repo, 13) == 1);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 4);
+	assert(find(service->repo, 13) == 2);
+	assert(find(service->repo, 11) == 0);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 3);
+	assert(find(service->repo, 14) == -1);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 2);
+	assert(find(service->repo, 13) == -1);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 1);
+	assert(find(service->repo, 12) == -1);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 0);
+	assert(find(service->repo, 11) == -1);
+
+	Undo(service);
+	assert(service->repo->lista_med->size == 0);
+
 	distruge_serviciu(service);
 }

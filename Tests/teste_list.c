@@ -8,7 +8,7 @@
 // functie de test pentru functia add (in lista)
 void test_add()
 {
-	List* list = creeaza_lista();
+	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 	assert(list->size == 0);
 	Medicament* m1 = creeaza_medicament(10, "Paracetamol", 5.15, 20);
 	Medicament* m2 = creeaza_medicament(11, "Ibuprofen", 17.2, 25);
@@ -31,7 +31,7 @@ void test_add()
 // functie de test pentru functia delete (in lista)
 void test_delete()
 {
-	List* list = creeaza_lista();
+	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 	assert(list->size == 0);
 
 	Medicament* m1 = creeaza_medicament(10, "Paracetamol", 5.15, 19);
