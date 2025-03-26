@@ -20,4 +20,6 @@ void run_tests()
 	test_sorteaza_medicamente();
 	test_filtreaza_dupa_cantitate();
 	test_filtreaza_dupa_nume();
+	test_filtreaza_dupa_concentratie();
+	test_undo();
 }

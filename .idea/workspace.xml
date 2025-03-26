@@ -7,7 +7,6 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakePresetLoader">{
   &quot;useNewFormat&quot;: true
@@ -32,50 +31,75 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4cde33b-661d-4322-be98-cacab5448188" name="Changes" comment="Trying to Merge Master with this branch">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cmakeFiles-v1-6392184a0abe1a591e6e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-aca0080bec54aef864e1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cmakeFiles-v1-8d98bbdce85510695b0b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2025-03-25T21-53-18-0289.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2025-03-25T22-01-51-0166.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/clion-Debug-Coverage-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/clion-Debug-Coverage-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-3492c441422c38e5a0ab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-03-25T21-53-18-0244.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-03-25T22-01-51-0182.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/.cmake/api/v1/reply/index-2025-03-25T21-53-16-0317.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/.cmake/api/v1/reply/index-2025-03-25T22-01-51-0195.json" afterDir="false" />
+    <list default="true" id="c4cde33b-661d-4322-be98-cacab5448188" name="Changes" comment="Gitignore update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/service.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/service.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/service.h" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/service.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/repository.c" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/repository.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/run_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/run_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/teste_list.c" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/teste_list.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/teste_service.c" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/teste_service.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/teste_service.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/teste_service.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/console.c" beforeDir="false" afterPath="$PROJECT_DIR$/UI/console.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/console.h" beforeDir="false" afterPath="$PROJECT_DIR$/UI/console.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/list.c" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/list.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/list.h" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/list.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/mysort.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Controller/service.c.o.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Domain/medicament.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Repository/repository.c.o.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/run_tests.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_domain.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_list.c.o.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_repo.c.o.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Tests/teste_service.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/UI/console.c.o.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Utils/list.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/Validator/validator.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/Lab5.dir/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/clion-WSL-Valgrind-Coverage-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/CMakeFiles/clion-WSL-Valgrind-Coverage-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/Lab5" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/Lab5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind/.cmake/api/v1/reply/index-2025-03-25T21-53-16-0354.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind/.cmake/api/v1/reply/index-2025-03-25T22-01-51-0207.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind/CMakeFiles/clion-WSL-Valgrind-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind/CMakeFiles/clion-WSL-Valgrind-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/console.c.gcda##console.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/console.c.gcda##console.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/list.c.gcda##list.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/list.c.gcda##list.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/medicament.c.gcda##medicament.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/medicament.c.gcda##medicament.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/repository.c.gcda##repository.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/repository.c.gcda##repository.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/run_tests.c.gcda##run_tests.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/run_tests.c.gcda##run_tests.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/service.c.gcda##service.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/service.c.gcda##service.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/teste_domain.c.gcda##teste_domain.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/teste_domain.c.gcda##teste_domain.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/teste_list.c.gcda##teste_list.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/teste_list.c.gcda##teste_list.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/teste_repo.c.gcda##teste_repo.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/teste_repo.c.gcda##teste_repo.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/teste_service.c.gcda##teste_service.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/teste_service.c.gcda##teste_service.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/validator.c.gcda##validator.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-wsl-valgrind-coverage/coverage/validator.c.gcda##validator.c.gcov" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +113,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Update_Cmake_config" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,9 +128,79 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/OulGabrielAlin/pharmacy-oop.git&quot;,
     &quot;accountId&quot;: &quot;a9ee7ab5-dd97-4303-ad94-7806bfa3a594&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;OulGabrielAlin&quot;,
+    &quot;repository&quot;: &quot;pharmacy-oop&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -133,27 +227,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "CMake Application.Lab5.executor": "Valgrind",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.west.config.association.type.startup.service": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "#1 on Code-Review-Implementation",
-    "last_opened_file_path": "D:/Info_Facultate/Semestrul_2/OOP/Lab2-4/Lab4",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CMakeSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;CMake Application.Lab5.executor&quot;: &quot;Coverage&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Undo__List&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Info_Facultate/Semestrul_2/OOP/Lab5&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Info_Facultate\Semestrul_2\OOP\Lab5\Controller" />
@@ -164,11 +259,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Lab5" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Lab5" TARGET_NAME="Lab5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Lab5" RUN_TARGET_NAME="Lab5">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -185,6 +275,7 @@
       <updated>1742851836759</updated>
       <workItem from="1742851839242" duration="4097000" />
       <workItem from="1742919339930" duration="16081000" />
+      <workItem from="1742996171877" duration="6137000" />
     </task>
     <task id="LOCAL-00001" summary="Change Lab architecture">
       <option name="closed" value="true" />
@@ -218,7 +309,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742855067742</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="local saves">
+      <option name="closed" value="true" />
+      <created>1742940633413</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742940633413</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Gitignore update">
+      <option name="closed" value="true" />
+      <created>1742940920663</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742940920663</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Gitignore update">
+      <option name="closed" value="true" />
+      <created>1742940940555</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742940940555</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,10 +359,23 @@
     <MESSAGE value="Change Lab architecture" />
     <MESSAGE value="Added more Cmake configurations" />
     <MESSAGE value="Trying to Merge Master with this branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to Merge Master with this branch" />
+    <MESSAGE value="local saves" />
+    <MESSAGE value="Gitignore update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gitignore update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>6</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="D:\Info_Facultate\Semestrul_2\OOP\Lab5\cmake-build-debug-coverage" NAME="Lab5 Coverage Results" MODIFIED="1742939299419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="gcov/llvm" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="D:\Info_Facultate\Semestrul_2\OOP\Lab5\cmake-build-wsl-valgrind-coverage" NAME="Lab5 Coverage Results" MODIFIED="1742939657278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="gcov/llvm" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="D:\Info_Facultate\Semestrul_2\OOP\Lab5\cmake-build-wsl-valgrind-coverage" NAME="Lab5 Coverage Results" MODIFIED="1743002341527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="gcov/llvm" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

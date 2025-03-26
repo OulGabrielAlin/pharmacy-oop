@@ -8,7 +8,7 @@
 /* Creaza un obiect de tip lista
 *  return: o lista fara elemente
 */ 
-List* creeaza_lista()
+List* creeaza_lista(Destructor destructor, Copiator copiator)
 {
 	List* list = malloc(sizeof(List));
 	if (list == NULL)
@@ -25,6 +25,8 @@ List* creeaza_lista()
 		perror("Couldn't find memory");
 		return NULL;
 	}
+	list->destructor = destructor;
+	list->copiator = copiator;
 	return list;
 }
 
@@ -79,7 +81,24 @@ void delete(List* list, int poz)
 void destroy_list(List* list)
 {
 	for (int i = 0; i < list->size; i++)
-		distruge_medicament(list->elems[i]);
+		list->destructor(list->elems[i]);
 	free(list->elems);
 	free(list);
+}
+
+/* Copiaza (deep-copy o lista)
+ * param: list -> lista initiala
+ * return : lista noua
+ */
+List* copy_list(List* list) {
+	List* copy = (List*)malloc(sizeof(List));
+	copy->elems = (TElem*)malloc(sizeof(TElem) * list->cap);
+	for (int i = 0; i < list->size; i++)
+		copy->elems[i] = list->copiator(list->elems[i]);
+
+	copy->size = list->size;
+	copy->cap = list->cap;
+	copy->destructor = list->destructor;
+	copy->copiator = list->copiator;
+	return copy;
 }

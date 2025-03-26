@@ -13,14 +13,14 @@
         -:    9:*  concentratie: concentratia medicamentului (numar rational)
         -:   10:*  cantitate: cantitatea medicamentului (numar intreg)
         -:   11:*/
-function creeaza_medicament called 61 returned 100% blocks executed 50%
-       61:   12:Medicament* creeaza_medicament(int cod, char nume[], float concentratie, int cantitate)
+function creeaza_medicament called 73 returned 100% blocks executed 50%
+       73:   12:Medicament* creeaza_medicament(int cod, char nume[], float concentratie, int cantitate)
         -:   13:{
-       61:   14:	Medicament* m = malloc(sizeof(Medicament));
-       61:   15:	if (m == NULL)
-       61:   15-block  0
+       73:   14:	Medicament* m = malloc(sizeof(Medicament));
+       73:   15:	if (m == NULL)
+       73:   15-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 61
+branch  1 taken 73
         -:   16:	{
     #####:   17:		perror("Couldn't find memory");
     %%%%%:   17-block  0
@@ -28,12 +28,12 @@ call    0 never executed
     #####:   18:		return NULL;
         -:   19:	}
         -:   20:
-       61:   21:	m->nume = malloc(sizeof(char) * (strlen(nume) + 1));
+       73:   21:	m->nume = malloc(sizeof(char) * (strlen(nume) + 1));
         -:   22:
-       61:   23:	if (m->nume == NULL)
-       61:   23-block  0
+       73:   23:	if (m->nume == NULL)
+       73:   23-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 61
+branch  1 taken 73
         -:   24:	{
     #####:   25:		perror("Couldn't find memory");
     %%%%%:   25-block  0
@@ -41,27 +41,27 @@ call    0 never executed
     #####:   26:		return NULL;
         -:   27:	}
         -:   28:
-       61:   29:	m->cod = cod;
-       61:   30:	strcpy(m->nume, nume);
-       61:   31:	m->concentratie = concentratie;
-       61:   32:	m->cantitate = cantitate;
+       73:   29:	m->cod = cod;
+       73:   30:	strcpy(m->nume, nume);
+       73:   31:	m->concentratie = concentratie;
+       73:   32:	m->cantitate = cantitate;
         -:   33:
-       61:   34:	return m;
-       61:   34-block  0
+       73:   34:	return m;
+       73:   34-block  0
         -:   35:}
         -:   36:
         -:   37:/* Returneaza o copie independenta a medicamentului dat
         -:   38:*  m: medicamentul dat
         -:   39:*  return: o copie
         -:   40:*/
-function copiaza_medicament called 4 returned 100% blocks executed 50%
-        4:   41:Medicament* copiaza_medicament(Medicament* m)
+function copiaza_medicament called 202 returned 100% blocks executed 50%
+      202:   41:Medicament* copiaza_medicament(Medicament* m)
         -:   42:{
-        4:   43:	Medicament* med = malloc(sizeof(Medicament));
-        4:   44:	if (med == NULL)
-        4:   44-block  0
+      202:   43:	Medicament* med = malloc(sizeof(Medicament));
+      202:   44:	if (med == NULL)
+      202:   44-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 202
         -:   45:	{
     #####:   46:		perror("Couldn't allocate memory");
     %%%%%:   46-block  0
@@ -69,15 +69,15 @@ call    0 never executed
     #####:   47:		return NULL;
         -:   48:	}
         -:   49:	
-        4:   50:	med->cod = m->cod;
-        4:   51:	med->concentratie = m->concentratie;
-        4:   52:	med->cantitate = m->cantitate;
+      202:   50:	med->cod = m->cod;
+      202:   51:	med->concentratie = m->concentratie;
+      202:   52:	med->cantitate = m->cantitate;
         -:   53:
-        4:   54:	med->nume = malloc(sizeof(char) * (strlen(m->nume) + 1));
-        4:   55:	if (med->nume == NULL)
-        4:   55-block  0
+      202:   54:	med->nume = malloc(sizeof(char) * (strlen(m->nume) + 1));
+      202:   55:	if (med->nume == NULL)
+      202:   55-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 202
         -:   56:	{
     #####:   57:		perror("Couldn't allocate memory");
     %%%%%:   57-block  0
@@ -85,18 +85,18 @@ call    0 never executed
     #####:   58:		return NULL;
         -:   59:	}
         -:   60:
-        4:   61:	strcpy(med->nume, m->nume);
+      202:   61:	strcpy(med->nume, m->nume);
         -:   62:
-        4:   63:	return med;
-        4:   63-block  0
+      202:   63:	return med;
+      202:   63-block  0
         -:   64:}
         -:   65:
         -:   66:/* Elibereaza memoria ocupata de un medicament
         -:   67:*  post: medicamentul este distrus
         -:   68:*/
-function distruge_medicament called 65 returned 100% blocks executed 100%
-       65:   69:void distruge_medicament(Medicament* m)
+function distruge_medicament called 275 returned 100% blocks executed 100%
+      275:   69:void distruge_medicament(Medicament* m)
         -:   70:{
-       65:   71:	free(m->nume);
-       65:   72:	free(m);
-       65:   73:}
+      275:   71:	free(m->nume);
+      275:   72:	free(m);
+      275:   73:}

@@ -40,4 +40,8 @@ call    0 returned 1
 call    0 returned 1
         1:   22:	test_filtreaza_dupa_nume();
 call    0 returned 1
-        1:   23:}
+        1:   23:	test_filtreaza_dupa_concentratie();
+call    0 returned 1
+        1:   24:	test_undo();
+call    0 returned 1
+        1:   25:}

@@ -12,34 +12,34 @@
         -:    8:*  cantitate: cantitatea medicamentului
         -:    9:*  post: in errors vor fi adaugat erorile care apar in urma datelor invalide
         -:   10:*/
-function valideaza called 55 returned 100% blocks executed 100%
-       55:   11:void valideaza(int cod, char nume[], float concentratie, int cantitate, char* errors)
+function valideaza called 69 returned 100% blocks executed 100%
+       69:   11:void valideaza(int cod, char nume[], float concentratie, int cantitate, char* errors)
         -:   12:{
-       55:   13:	if (cod < 1)
-       55:   13-block  0
+       69:   13:	if (cod < 1)
+       69:   13-block  0
 branch  0 taken 7 (fallthrough)
-branch  1 taken 48
+branch  1 taken 62
         7:   14:		strcat(errors, "Codul trebuie sa aiba o valoare mai mare ca 0\n");
         7:   14-block  0
-       55:   15:	if (concentratie <= 0 || concentratie >= 100)
-       55:   15-block  0
-branch  0 taken 52 (fallthrough)
+       69:   15:	if (concentratie <= 0 || concentratie >= 100)
+       69:   15-block  0
+branch  0 taken 66 (fallthrough)
 branch  1 taken 3
-       52:   15-block  1
+       66:   15-block  1
 branch  2 taken 4 (fallthrough)
-branch  3 taken 48
+branch  3 taken 62
         7:   16:		strcat(errors, "Concentratia trebuie sa aiba o valoare in intervalul (0, 100)\n");
         7:   16-block  0
-       55:   17:	if (cantitate < 0)
-       55:   17-block  0
+       69:   17:	if (cantitate < 0)
+       69:   17-block  0
 branch  0 taken 5 (fallthrough)
-branch  1 taken 50
+branch  1 taken 64
         5:   18:		strcat(errors, "Cantitatea trebuie sa fie un numar intreg pozitiv\n");
         5:   18-block  0
-       55:   19:	if (strlen(nume) == 0)
-       55:   19-block  0
+       69:   19:	if (strlen(nume) == 0)
+       69:   19-block  0
 branch  0 taken 1 (fallthrough)
-branch  1 taken 54
+branch  1 taken 68
         1:   20:		strcat(errors, "Trebuie sa introduceti un nume pentru medicament\n");
         1:   20-block  0
-       55:   21:}
+       69:   21:}

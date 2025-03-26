@@ -12,14 +12,14 @@
         -:    8:/* Creaza un obiect de tip lista
         -:    9:*  return: o lista fara elemente
         -:   10:*/ 
-function creeaza_lista called 15 returned 100% blocks executed 50%
-       15:   11:List* creeaza_lista()
+function creeaza_lista called 28 returned 100% blocks executed 50%
+       28:   11:List* creeaza_lista(Destructor destructor, Copiator copiator)
         -:   12:{
-       15:   13:	List* list = malloc(sizeof(List));
-       15:   14:	if (list == NULL)
-       15:   14-block  0
+       28:   13:	List* list = malloc(sizeof(List));
+       28:   14:	if (list == NULL)
+       28:   14-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 15
+branch  1 taken 28
         -:   15:	{
     #####:   16:		perror("Couldn't find memory");
     %%%%%:   16-block  0
@@ -27,110 +27,137 @@ call    0 never executed
     #####:   17:		return NULL;
         -:   18:	}
         -:   19:
-       15:   20:	list->size = 0;
-       15:   21:	list->cap = 2;
-       15:   22:	list->elems = malloc(sizeof(TElem) * list->cap);
-       15:   23:	if (list->elems == NULL)
-       15:   23-block  0
+       28:   20:	list->size = 0;
+       28:   21:	list->cap = 2;
+       28:   22:	list->elems = malloc(sizeof(TElem) * list->cap);
+       28:   23:	if (list->elems == NULL)
+       28:   23-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 15
+branch  1 taken 28
         -:   24:	{
     #####:   25:		perror("Couldn't find memory");
     %%%%%:   25-block  0
 call    0 never executed
     #####:   26:		return NULL;
         -:   27:	}
-       15:   28:	return list;
-       15:   28-block  0
-        -:   29:}
-        -:   30:
-        -:   31:/* Adauga un medicament la lista
-        -:   32:*  list: lista curenta
-        -:   33:*  m: medicamentul adaugat
-        -:   34:*/
-function add called 57 returned 100% blocks executed 80%
-       57:   35:void add(List* list, TElem m)
-        -:   36:{
-       57:   37:	if (list->size == list->cap)
-       57:   37-block  0
-branch  0 taken 12 (fallthrough)
-branch  1 taken 45
-        -:   38:	{
-       12:   39:		list->cap *= 2;
-       12:   40:		TElem* new_list = malloc(sizeof(TElem) * list->cap);
-       12:   41:		if (new_list == NULL)
-       12:   41-block  0
+       28:   28:	list->destructor = destructor;
+       28:   29:	list->copiator = copiator;
+       28:   30:	return list;
+       28:   30-block  0
+        -:   31:}
+        -:   32:
+        -:   33:/* Adauga un medicament la lista
+        -:   34:*  list: lista curenta
+        -:   35:*  m: medicamentul adaugat
+        -:   36:*/
+function add called 138 returned 100% blocks executed 80%
+      138:   37:void add(List* list, TElem m)
+        -:   38:{
+      138:   39:	if (list->size == list->cap)
+      138:   39-block  0
+branch  0 taken 33 (fallthrough)
+branch  1 taken 105
+        -:   40:	{
+       33:   41:		list->cap *= 2;
+       33:   42:		TElem* new_list = malloc(sizeof(TElem) * list->cap);
+       33:   43:		if (new_list == NULL)
+       33:   43-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 12
-        -:   42:		{
-    #####:   43:			perror("Couldn't allocate more memory");
-    %%%%%:   43-block  0
+branch  1 taken 33
+        -:   44:		{
+    #####:   45:			perror("Couldn't allocate more memory");
+    %%%%%:   45-block  0
 call    0 never executed
-    #####:   44:			return;
-        -:   45:		}
-        -:   46:
-       52:   47:		for (int i = 0; i < list->size; i++)
-       12:   47-block  0
-       52:   47-block  1
-branch  0 taken 40
-branch  1 taken 12 (fallthrough)
-       40:   48:			new_list[i] = list->elems[i];
-       40:   48-block  0
-        -:   49:
-       12:   50:		free(list->elems);
-       12:   51:		list->elems = new_list;
-       12:   51-block  0
-        -:   52:	}
-        -:   53:
-       57:   54:	list->elems[list->size] = m;
-       57:   55:	++(list->size);
-       57:   55-block  0
-        -:   56:}
-        -:   57:
-        -:   58:/* Sterge un medicament din lista dupa pozitie
-        -:   59:*  list: lista curenta
-        -:   60:*  poz: pozitia data
-        -:   61:*/
-function delete called 13 returned 100% blocks executed 100%
-       13:   62:void delete(List* list, int poz)
-        -:   63:{
-       13:   64:	if (poz >= list->size)
-       13:   64-block  0
+    #####:   46:			return;
+        -:   47:		}
+        -:   48:
+      157:   49:		for (int i = 0; i < list->size; i++)
+       33:   49-block  0
+      157:   49-block  1
+branch  0 taken 124
+branch  1 taken 33 (fallthrough)
+      124:   50:			new_list[i] = list->elems[i];
+      124:   50-block  0
+        -:   51:
+       33:   52:		free(list->elems);
+       33:   53:		list->elems = new_list;
+       33:   53-block  0
+        -:   54:	}
+        -:   55:
+      138:   56:	list->elems[list->size] = m;
+      138:   57:	++(list->size);
+      138:   57-block  0
+        -:   58:}
+        -:   59:
+        -:   60:/* Sterge un medicament din lista dupa pozitie
+        -:   61:*  list: lista curenta
+        -:   62:*  poz: pozitia data
+        -:   63:*/
+function delete called 15 returned 100% blocks executed 100%
+       15:   64:void delete(List* list, int poz)
+        -:   65:{
+       15:   66:	if (poz >= list->size)
+       15:   66-block  0
 branch  0 taken 1 (fallthrough)
-branch  1 taken 12
-        1:   65:		return;
-        1:   65-block  0
-        -:   66:
-       12:   67:	distruge_medicament(list->elems[poz]);
-       12:   67-block  0
-call    0 returned 12
+branch  1 taken 14
+        1:   67:		return;
+        1:   67-block  0
         -:   68:
-       26:   69:	for (int i = poz; i < list->size - 1; i++)
-       26:   69-block  0
-branch  0 taken 14
-branch  1 taken 12 (fallthrough)
-       14:   70:		list->elems[i] = list->elems[i + 1];
-       14:   70-block  0
-        -:   71:	
-        -:   72:
-       12:   73:	--(list->size);
-       12:   73-block  0
-        -:   74:}
-        -:   75:
-        -:   76:/* Elibereaza memoria ocupata de lista
-        -:   77:*  post: lista este distrusa
-        -:   78:*/
-function destroy_list called 15 returned 100% blocks executed 100%
-       15:   79:void destroy_list(List* list)
-        -:   80:{
-       60:   81:	for (int i = 0; i < list->size; i++)
-       15:   81-block  0
-       60:   81-block  1
-branch  0 taken 45
-branch  1 taken 15 (fallthrough)
-       45:   82:		distruge_medicament(list->elems[i]);
-       45:   82-block  0
-call    0 returned 45
-       15:   83:	free(list->elems);
-       15:   84:	free(list);
-       15:   85:}
+       14:   69:	distruge_medicament(list->elems[poz]);
+       14:   69-block  0
+call    0 returned 14
+        -:   70:
+       32:   71:	for (int i = poz; i < list->size - 1; i++)
+       32:   71-block  0
+branch  0 taken 18
+branch  1 taken 14 (fallthrough)
+       18:   72:		list->elems[i] = list->elems[i + 1];
+       18:   72-block  0
+        -:   73:	
+        -:   74:
+       14:   75:	--(list->size);
+       14:   75-block  0
+        -:   76:}
+        -:   77:
+        -:   78:/* Elibereaza memoria ocupata de lista
+        -:   79:*  post: lista este distrusa
+        -:   80:*/
+function destroy_list called 101 returned 100% blocks executed 100%
+      101:   81:void destroy_list(List* list)
+        -:   82:{
+      409:   83:	for (int i = 0; i < list->size; i++)
+      101:   83-block  0
+      409:   83-block  1
+branch  0 taken 308
+branch  1 taken 101 (fallthrough)
+      308:   84:		list->destructor(list->elems[i]);
+      308:   84-block  0
+call    0 returned 308
+      101:   85:	free(list->elems);
+      101:   86:	free(list);
+      101:   87:}
+        -:   88:
+        -:   89:/* Copiaza (deep-copy o lista)
+        -:   90: * param: list -> lista initiala
+        -:   91: * return : lista noua
+        -:   92: */
+function copy_list called 73 returned 100% blocks executed 100%
+       73:   93:List* copy_list(List* list) {
+       73:   94:	List* copy = (List*)malloc(sizeof(List));
+       73:   95:	copy->elems = (TElem*)malloc(sizeof(TElem) * list->cap);
+      268:   96:	for (int i = 0; i < list->size; i++)
+       73:   96-block  0
+      268:   96-block  1
+branch  0 taken 195
+branch  1 taken 73 (fallthrough)
+      195:   97:		copy->elems[i] = list->copiator(list->elems[i]);
+      195:   97-block  0
+call    0 returned 195
+        -:   98:
+       73:   99:	copy->size = list->size;
+       73:  100:	copy->cap = list->cap;
+       73:  101:	copy->destructor = list->destructor;
+       73:  102:	copy->copiator = list->copiator;
+       73:  103:	return copy;
+       73:  103-block  0
+        -:  104:}

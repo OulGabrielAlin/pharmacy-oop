@@ -13,7 +13,7 @@
 function test_add called 1 returned 100% blocks executed 70%
         1:    9:void test_add()
         -:   10:{
-        1:   11:	List* list = creeaza_lista();
+        1:   11:	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
         1:   11-block  0
 call    0 returned 1
        1*:   12:	assert(list->size == 0);
@@ -81,7 +81,7 @@ call    0 returned 1
 function test_delete called 1 returned 100% blocks executed 82%
         1:   32:void test_delete()
         -:   33:{
-        1:   34:	List* list = creeaza_lista();
+        1:   34:	List* list = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
         1:   34-block  0
 call    0 returned 1
        1*:   35:	assert(list->size == 0);

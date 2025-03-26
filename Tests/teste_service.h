@@ -7,6 +7,8 @@ void test_sterge_medicament();
 void test_sorteaza_medicamente();
 void test_filtreaza_dupa_cantitate();
 void test_filtreaza_dupa_nume();
+void test_filtreaza_dupa_concentratie();
+void test_undo();
 
 
 #endif

@@ -15,7 +15,7 @@ Repo* creeaza_repo()
 		return NULL;
 	}
 
-	repo->lista_med = creeaza_lista();
+	repo->lista_med = creeaza_lista((void*)distruge_medicament, (void*)copiaza_medicament);
 	if (repo->lista_med == NULL)
 		return NULL;
 

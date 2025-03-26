@@ -13,14 +13,14 @@
         -:    9:/* Creeaza un obiect de tip serviciu pentru medicamente
         -:   10:*  return: un serviciu pentru medicamente
         -:   11:*/ 
-function creeaza_serviciu called 7 returned 100% blocks executed 56%
-        7:   12:ServiceMed* creeaza_serviciu()
+function creeaza_serviciu called 9 returned 100% blocks executed 54%
+        9:   12:ServiceMed* creeaza_serviciu()
         -:   13:{
-        7:   14:	ServiceMed* service = malloc(sizeof(ServiceMed));
-        7:   15:	if (service == NULL)
-        7:   15-block  0
+        9:   14:	ServiceMed* service = malloc(sizeof(ServiceMed));
+        9:   15:	if (service == NULL)
+        9:   15-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 7
+branch  1 taken 9
         -:   16:	{
     #####:   17:		perror("Couldn't allocate memory");
     %%%%%:   17-block  0
@@ -28,12 +28,12 @@ call    0 never executed
     #####:   18:		return NULL;
         -:   19:	}
         -:   20:
-        7:   21:	Repo* repo = creeaza_repo();
-        7:   21-block  0
-call    0 returned 7
-        7:   22:	if (repo == NULL)
+        9:   21:	Repo* repo = creeaza_repo();
+        9:   21-block  0
+call    0 returned 9
+        9:   22:	if (repo == NULL)
 branch  0 taken 0 (fallthrough)
-branch  1 taken 7
+branch  1 taken 9
         -:   23:	{
     #####:   24:		perror("Couldn't allocate memory");
     %%%%%:   24-block  0
@@ -41,218 +41,321 @@ call    0 never executed
     #####:   25:		return NULL;
         -:   26:	}
         -:   27:
-        7:   28:	service->repo = repo;
-        7:   29:	return service;
-        7:   29-block  0
-        -:   30:}
-        -:   31:
-        -:   32:/* Elibereaza memoria ocupata de serviciu
-        -:   33:*  post: serviciul este distrus
-        -:   34:*/
-function distruge_serviciu called 7 returned 100% blocks executed 100%
-        7:   35:void distruge_serviciu(ServiceMed* service)
-        -:   36:{
-        7:   37:	distruge_repo(service->repo);
-        7:   37-block  0
-call    0 returned 7
-        7:   38:	free(service);
-        7:   39:}
+        9:   28:	service->repo = repo;
+        -:   29:
+        9:   30:	List* list = creeaza_lista((void*)destroy_list, (void*)copy_list);
+        9:   30-block  0
+call    0 returned 9
+        9:   31:	if (list == NULL)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 9
+        -:   32:	{
+    #####:   33:		perror("Couldn't allocate memory");
+    %%%%%:   33-block  0
+call    0 never executed
+    #####:   34:		return NULL;
+        -:   35:	}
+        -:   36:
+        9:   37:	service->listaUndo = list;
+        9:   38:	return service;
+        9:   38-block  0
+        -:   39:}
         -:   40:
-        -:   41:/* Adauga un medicament la lista de medicamente pe baza datelor citite
-        -:   42:*  service: serviciul de medicamente curent
-        -:   43:*  cod: codul medicamentului
-        -:   44:*  nume: numele medicamentului
-        -:   45:*  concentratie: concentratia medicamentului
-        -:   46:*  cantitate: cantitatea medicamentului
-        -:   47:*  errors: va contine la iesirea din functie lista de erori cauzate de date invalide
-        -:   48:*/
-function adauga_medicament called 45 returned 100% blocks executed 100%
-       45:   49:void adauga_medicament(ServiceMed* service, int cod, char nume[], float concentratie, int cantitate, char* errors)
-        -:   50:{
-       45:   51:	valideaza(cod, nume, concentratie, cantitate, errors);
-       45:   51-block  0
-call    0 returned 45
-        -:   52:
-       45:   53:	Medicament* m = creeaza_medicament(cod, nume, concentratie, cantitate);
-call    0 returned 45
-        -:   54:
-       45:   55:	if (strlen(errors) == 0)
-branch  0 taken 40 (fallthrough)
+        -:   41:/* Elibereaza memoria ocupata de serviciu
+        -:   42:*  post: serviciul este distrus
+        -:   43:*/
+function distruge_serviciu called 9 returned 100% blocks executed 100%
+        9:   44:void distruge_serviciu(ServiceMed* service)
+        -:   45:{
+        9:   46:	distruge_repo(service->repo);
+        9:   46-block  0
+call    0 returned 9
+        9:   47:	destroy_list(service->listaUndo);
+call    0 returned 9
+        9:   48:	free(service);
+        9:   49:}
+        -:   50:
+        -:   51:/* Adauga un medicament la lista de medicamente pe baza datelor citite
+        -:   52:*  service: serviciul de medicamente curent
+        -:   53:*  cod: codul medicamentului
+        -:   54:*  nume: numele medicamentului
+        -:   55:*  concentratie: concentratia medicamentului
+        -:   56:*  cantitate: cantitatea medicamentului
+        -:   57:*  errors: va contine la iesirea din functie lista de erori cauzate de date invalide
+        -:   58:*/
+function adauga_medicament called 57 returned 100% blocks executed 100%
+       57:   59:void adauga_medicament(ServiceMed* service, int cod, char nume[], float concentratie, int cantitate, char* errors)
+        -:   60:{
+       57:   61:	valideaza(cod, nume, concentratie, cantitate, errors);
+       57:   61-block  0
+call    0 returned 57
+        -:   62:
+       57:   63:	Medicament* m = creeaza_medicament(cod, nume, concentratie, cantitate);
+call    0 returned 57
+       57:   64:	List* copie = copy_list(service->repo->lista_med);
+call    0 returned 57
+        -:   65:
+       57:   66:	if (strlen(errors) == 0)
+branch  0 taken 52 (fallthrough)
 branch  1 taken 5
-        -:   56:	{
-       40:   57:		store(service->repo, m);
-       40:   57-block  0
-call    0 returned 40
-       40:   58:		return;
-        -:   59:	}
-        -:   60:
-        5:   61:	if (m != NULL)
-        5:   61-block  0
+        -:   67:	{
+       52:   68:		store(service->repo, m);
+       52:   68-block  0
+call    0 returned 52
+       52:   69:		add(service->listaUndo, copie);
+call    0 returned 52
+       52:   70:		return;
+        -:   71:	}
+        -:   72:
+        5:   73:	if (m != NULL) {
+        5:   73-block  0
 branch  0 taken 5 (fallthrough)
 branch  1 taken 0
-        5:   62:		distruge_medicament(m);
-        5:   62-block  0
+        5:   74:		distruge_medicament(m);
+        5:   74-block  0
 call    0 returned 5
-        -:   63:}
-        -:   64:
-        -:   65:/* Modifica numele si concentratia unui medicament care are un cod dat
-        -:   66:*  service: serviciul de medicamente curent
-        -:   67:*  cod: codul medicamentului
-        -:   68:*  nume: noul nume
-        -:   69:*  concentratie: noua concentratie
-        -:   70:*  errors: va contine la iesirea din functie lista de erori cauzate de date invalide
-        -:   71:*/
-function modifica_medicament called 5 returned 100% blocks executed 100%
-        5:   72:void modifica_medicament(ServiceMed* service, int cod, char nume[], float concentratie, char* errors)
-        -:   73:{
-        5:   74:	int cantitate = 10;
-        5:   75:	valideaza(cod, nume, concentratie, cantitate, errors);
-        5:   75-block  0
+        5:   75:		destroy_list(copie);
 call    0 returned 5
-        -:   76:
-        5:   77:	int status = 1;
-        5:   78:	if (strlen(errors) != 0)
+        -:   76:	}
+        -:   77:}
+        -:   78:
+        -:   79:/* Modifica numele si concentratia unui medicament care are un cod dat
+        -:   80:*  service: serviciul de medicamente curent
+        -:   81:*  cod: codul medicamentului
+        -:   82:*  nume: noul nume
+        -:   83:*  concentratie: noua concentratie
+        -:   84:*  errors: va contine la iesirea din functie lista de erori cauzate de date invalide
+        -:   85:*/
+function modifica_medicament called 7 returned 100% blocks executed 100%
+        7:   86:void modifica_medicament(ServiceMed* service, int cod, char nume[], float concentratie, char* errors)
+        -:   87:{
+        7:   88:	int cantitate = 10;
+        7:   89:	valideaza(cod, nume, concentratie, cantitate, errors);
+        7:   89-block  0
+call    0 returned 7
+        -:   90:
+        7:   91:	int status = 1;
+        7:   92:	if (strlen(errors) != 0)
 branch  0 taken 3 (fallthrough)
-branch  1 taken 2
-        3:   79:		return;
-        3:   79-block  0
-        -:   80:		
-        2:   81:	status = update(service->repo, cod, nume, concentratie);
-        2:   81-block  0
-call    0 returned 2
-        -:   82:
-        2:   83:	if (!status)
+branch  1 taken 4
+        3:   93:		return;
+        3:   93-block  0
+        -:   94:
+        4:   95:	List* copie = copy_list(service->repo->lista_med);
+        4:   95-block  0
+call    0 returned 4
+        4:   96:	status = update(service->repo, cod, nume, concentratie);
+call    0 returned 4
+        -:   97:
+        4:   98:	if (!status) {
 branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:   99:		strcat(errors, "Medicamentul cu codul dat nu exista\n");
+        1:  100:		destroy_list(copie);
+        1:  100-block  0
+call    0 returned 1
+        1:  101:		return;
+        -:  102:	}
+        3:  103:	add(service->listaUndo, copie);
+        3:  103-block  0
+call    0 returned 3
+        -:  104:}
+        -:  105:
+        -:  106:/* Sterge un medicament care are un cod dat
+        -:  107:*  service: serviciul de medicamente curent
+        -:  108:*  cod: codul medicamentului
+        -:  109:*  return: 1 daca stergerea a avut loc, 0 in caz contrar
+        -:  110:*/
+function sterge_medicament called 12 returned 100% blocks executed 100%
+       12:  111:int sterge_medicament(ServiceMed* service, int cod)
+        -:  112:{
+       12:  113:	List* copie = copy_list(service->repo->lista_med);
+       12:  113-block  0
+call    0 returned 12
+       12:  114:	int retur = erase(service->repo, cod);
+call    0 returned 12
+        -:  115:
+       12:  116:	if (retur == 1)
+branch  0 taken 11 (fallthrough)
 branch  1 taken 1
-        1:   84:		strcat(errors, "Medicamentul cu codul dat nu exista\n");
-        1:   84-block  0
-        -:   85:}
-        -:   86:
-        -:   87:/* Sterge un medicament care are un cod dat
-        -:   88:*  service: serviciul de medicamente curent
-        -:   89:*  cod: codul medicamentului
-        -:   90:*  return: 1 daca stergerea a avut loc, 0 in caz contrar
-        -:   91:*/
-function sterge_medicament called 10 returned 100% blocks executed 100%
-       10:   92:int sterge_medicament(ServiceMed* service, int cod)
-        -:   93:{
-       10:   94:	return erase(service->repo, cod);
-       10:   94-block  0
-call    0 returned 10
-        -:   95:}
-        -:   96:
+       11:  117:		add(service->listaUndo, copie);
+       11:  117-block  0
+call    0 returned 11
+        -:  118:	else
+        1:  119:		destroy_list(copie);
+        1:  119-block  0
+call    0 returned 1
+        -:  120:
+       12:  121:	return retur;
+       12:  121-block  0
+        -:  122:}
+        -:  123:
 function cmpByType called 42 returned 100% blocks executed 100%
-       42:   97:int cmpByType(Medicament* m1, Medicament* m2)
-        -:   98:{
-       42:   99:	if (strcmp(m1->nume, m2->nume) < 0 || (strcmp(m1->nume, m2->nume) == 0 && m1->cantitate < m2->cantitate))
-       42:   99-block  0
+       42:  124:int cmpByType(Medicament* m1, Medicament* m2)
+        -:  125:{
+       42:  126:	if (strcmp(m1->nume, m2->nume) < 0 || (strcmp(m1->nume, m2->nume) == 0 && m1->cantitate < m2->cantitate))
+       42:  126-block  0
 branch  0 taken 27 (fallthrough)
 branch  1 taken 15
-       27:   99-block  1
+       27:  126-block  1
 branch  2 taken 9 (fallthrough)
 branch  3 taken 18
-        9:   99-block  2
+        9:  126-block  2
 branch  4 taken 6 (fallthrough)
 branch  5 taken 3
-       21:  100:		return 1;
-       21:  100-block  0
-       21:  101:	return 0;
-       21:  101-block  0
-        -:  102:}
-        -:  103:/* Sorteaza crescator sau descrescator lista de medicamente din serviciu
-        -:  104:*  service: serviciul curent de medicamente
-        -:  105:*  crescator: daca este 0 indica sortare descrescatoare, altfel crescatoare
-        -:  106:*/
+       21:  127:		return 1;
+       21:  127-block  0
+       21:  128:	return 0;
+       21:  128-block  0
+        -:  129:}
+        -:  130:/* Sorteaza crescator sau descrescator lista de medicamente din serviciu
+        -:  131:*  service: serviciul curent de medicamente
+        -:  132:*  crescator: daca este 0 indica sortare descrescatoare, altfel crescatoare
+        -:  133:*/
 function sorteaza_medicamente called 2 returned 100% blocks executed 100%
-        2:  107:void sorteaza_medicamente(ServiceMed* service, int crescator)
-        -:  108:{
-        2:  109:	sort(service->repo->lista_med, cmpByType, crescator);
-        2:  109-block  0
+        2:  134:void sorteaza_medicamente(ServiceMed* service, int crescator)
+        -:  135:{
+        2:  136:	sort(service->repo->lista_med, cmpByType, crescator);
+        2:  136-block  0
 call    0 returned 2
-        2:  110:}
-        -:  111:
-        -:  112:/* Selecteaza din lista de medicamente acelea care au cantitatea mai mica ca o valoare data
-        -:  113:*  service: serviciul de medicamente curent
-        -:  114:*  list: lista in care vor fi adaugate medicamentele filtrate
-        -:  115:*  cantitate: valoarea data
-        -:  116:*/
+        2:  137:}
+        -:  138:
+        -:  139:/* Selecteaza din lista de medicamente acelea care au cantitatea mai mica ca o valoare data
+        -:  140:*  service: serviciul de medicamente curent
+        -:  141:*  list: lista in care vor fi adaugate medicamentele filtrate
+        -:  142:*  cantitate: valoarea data
+        -:  143:*/
 function filtreaza_dupa_cantitate called 1 returned 100% blocks executed 100%
-        1:  117:void filtreaza_dupa_cantitate(ServiceMed* service, List* list, int cantitate)
-        -:  118:{
-        6:  119:	for (int i = 0; i < service->repo->lista_med->size; i++)
-        1:  119-block  0
-        5:  119-block  1
-        6:  119-block  2
+        1:  144:void filtreaza_dupa_cantitate(ServiceMed* service, List* list, int cantitate)
+        -:  145:{
+        6:  146:	for (int i = 0; i < service->repo->lista_med->size; i++)
+        1:  146-block  0
+        5:  146-block  1
+        6:  146-block  2
 branch  0 taken 5
 branch  1 taken 1 (fallthrough)
-        5:  120:		if (((Medicament*)service->repo->lista_med->elems[i])->cantitate < cantitate)
-        5:  120-block  0
+        5:  147:		if (((Medicament*)service->repo->lista_med->elems[i])->cantitate < cantitate)
+        5:  147-block  0
 branch  0 taken 2 (fallthrough)
 branch  1 taken 3
-        -:  121:		{
-        2:  122:			Medicament* copy = copiaza_medicament(service->repo->lista_med->elems[i]);
-        2:  122-block  0
+        -:  148:		{
+        2:  149:			Medicament* copy = copiaza_medicament(service->repo->lista_med->elems[i]);
+        2:  149-block  0
 call    0 returned 2
-        2:  123:			add(list, copy);
+        2:  150:			add(list, copy);
 call    0 returned 2
-        -:  124:		}
-        1:  125:}
-        -:  126:
-        -:  127:/* Selecteaza din lista de medicamente acelea care au prima litera din nume aceeasi cu o litera data
-        -:  128:*  service: serviciul de medicamente curent
-        -:  129:*  list: lista in care vor fi adaugate medicamentele filtrate
-        -:  130:*  c: litera data
-        -:  131:*/
+        -:  151:		}
+        1:  152:}
+        -:  153:
+        -:  154:/* Selecteaza din lista de medicamente acelea care au prima litera din nume aceeasi cu o litera data
+        -:  155:*  service: serviciul de medicamente curent
+        -:  156:*  list: lista in care vor fi adaugate medicamentele filtrate
+        -:  157:*  c: litera data
+        -:  158:*/
 function filtreaza_dupa_nume called 1 returned 100% blocks executed 100%
-        1:  132:void filtreaza_dupa_nume(ServiceMed* service, List* list, char c)
-        -:  133:{
-        6:  134:	for (int i = 0; i < service->repo->lista_med->size; i++)
-        1:  134-block  0
-        5:  134-block  1
-        6:  134-block  2
+        1:  159:void filtreaza_dupa_nume(ServiceMed* service, List* list, char c)
+        -:  160:{
+        6:  161:	for (int i = 0; i < service->repo->lista_med->size; i++)
+        1:  161-block  0
+        5:  161-block  1
+        6:  161-block  2
 branch  0 taken 5
 branch  1 taken 1 (fallthrough)
-        5:  135:		if (((Medicament*)service->repo->lista_med->elems[i])->nume[0] == c)
-        5:  135-block  0
+        5:  162:		if (((Medicament*)service->repo->lista_med->elems[i])->nume[0] == c)
+        5:  162-block  0
 branch  0 taken 2 (fallthrough)
 branch  1 taken 3
-        -:  136:		{
-        2:  137:			Medicament* copy = copiaza_medicament(service->repo->lista_med->elems[i]);
-        2:  137-block  0
+        -:  163:		{
+        2:  164:			Medicament* copy = copiaza_medicament(service->repo->lista_med->elems[i]);
+        2:  164-block  0
 call    0 returned 2
-        2:  138:			add(list, copy);
+        2:  165:			add(list, copy);
 call    0 returned 2
-        -:  139:		}
-        1:  140:}
-        -:  141:
-        -:  142:/* Adauga medicamente default la lista de medicamente
-        -:  143:*  service: serviciul de medicamente dat
-        -:  144:*/
+        -:  166:		}
+        1:  167:}
+        -:  168:
+        -:  169:/* Selecteaza din lista de medicamente acelea care au concentratia intre doua valori date
+        -:  170:*  service: serviciul de medicamente curent
+        -:  171:*  list: lista in care vor fi adaugate medicamentele filtrate
+        -:  172:*  c1: limita inferioara de concentratie (numar real)
+        -:  173:*  c2: limita superioara de concentratie (numar real)
+        -:  174:*/
+function filtreaza_dupa_concentratie called 2 returned 100% blocks executed 100%
+        2:  175:void filtreaza_dupa_concentratie(ServiceMed* service, List* list, double c1, double c2)
+        -:  176:{
+       12:  177:	for (int i = 0; i < service->repo->lista_med->size; i++)
+        2:  177-block  0
+       10:  177-block  1
+       12:  177-block  2
+branch  0 taken 10
+branch  1 taken 2 (fallthrough)
+       10:  178:		if (((Medicament*)service->repo->lista_med->elems[i])->concentratie - c1 > 0 &&
+       10:  178-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 3
+        7:  179:			((Medicament*)service->repo->lista_med->elems[i])->concentratie - c2 < 0)
+        7:  179-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 4
+        -:  180:		{
+        3:  181:			Medicament* copy = copiaza_medicament(service->repo->lista_med->elems[i]);
+        3:  181-block  0
+call    0 returned 3
+        3:  182:			add(list, copy);
+call    0 returned 3
+        -:  183:		}
+        2:  184:}
+        -:  185:
+        -:  186:
+        -:  187:/* Adauga medicamente default la lista de medicamente
+        -:  188:*  service: serviciul de medicamente dat
+        -:  189:*/
 function adauga_default called 1 returned 100% blocks executed 100%
-        1:  145:void adauga_default(ServiceMed* service)
-        -:  146:{
-        1:  147:	char errors[] = "";
-        1:  148:	adauga_medicament(service, 10, "Paracetamol", 12.11, 6, errors);
-        1:  148-block  0
+        1:  190:void adauga_default(ServiceMed* service)
+        -:  191:{
+        1:  192:	char errors[] = "";
+        1:  193:	adauga_medicament(service, 10, "Paracetamol", 12.11, 6, errors);
+        1:  193-block  0
 call    0 returned 1
-        1:  149:	adauga_medicament(service, 11, "Ibuprofen", 19.1, 9, errors);
+        1:  194:	adauga_medicament(service, 11, "Ibuprofen", 19.1, 9, errors);
 call    0 returned 1
-        1:  150:	adauga_medicament(service, 12, "Aspirina", 20.2, 4, errors);
+        1:  195:	adauga_medicament(service, 12, "Aspirina", 20.2, 4, errors);
 call    0 returned 1
-        1:  151:	adauga_medicament(service, 13, "Omeprazol", 30.5, 10, errors);
+        1:  196:	adauga_medicament(service, 13, "Omeprazol", 30.5, 10, errors);
 call    0 returned 1
-        1:  152:	adauga_medicament(service, 14, "Amoxicilina", 9.51, 20, errors);
+        1:  197:	adauga_medicament(service, 14, "Amoxicilina", 9.51, 20, errors);
 call    0 returned 1
-        1:  153:	adauga_medicament(service, 15, "Metformin", 20.2, 19, errors);
+        1:  198:	adauga_medicament(service, 15, "Metformin", 20.2, 19, errors);
 call    0 returned 1
-        1:  154:	adauga_medicament(service, 16, "Diazepam", 15.1, 7, errors);
+        1:  199:	adauga_medicament(service, 16, "Diazepam", 15.1, 7, errors);
 call    0 returned 1
-        1:  155:	adauga_medicament(service, 17, "Atorvastatina", 10.78, 2, errors);
+        1:  200:	adauga_medicament(service, 17, "Atorvastatina", 10.78, 2, errors);
 call    0 returned 1
-        1:  156:	adauga_medicament(service, 18, "Furosemid", 23.11, 5, errors);
+        1:  201:	adauga_medicament(service, 18, "Furosemid", 23.11, 5, errors);
 call    0 returned 1
-        1:  157:	adauga_medicament(service, 19, "Cetirizina", 29.2, 21, errors);
+        1:  202:	adauga_medicament(service, 19, "Cetirizina", 29.2, 21, errors);
 call    0 returned 1
-        1:  158:	adauga_medicament(service, 20, "Levotiroxina", 4.2, 16, errors);
+        1:  203:	adauga_medicament(service, 20, "Levotiroxina", 4.2, 16, errors);
 call    0 returned 1
-        1:  159:}
+        1:  204:}
+        -:  205:
+        -:  206:/* Functie care realizeaza operatia de undo (restituie ultima versiune a codului, inainte de modificarea suferita)
+        -:  207: * param: service -> service-ul curent
+        -:  208: *	return : void
+        -:  209: */
+function Undo called 12 returned 100% blocks executed 100%
+       12:  210:void Undo(ServiceMed* service) {
+       12:  211:	if (service->listaUndo->size == 0)
+       12:  211-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 11
+        1:  212:		return;
+        1:  212-block  0
+        -:  213:
+       11:  214:	List* ultima_lista = service->listaUndo->elems[service->listaUndo->size - 1];
+       11:  215:	service->listaUndo->size--;
+       11:  216:	destroy_list(service->repo->lista_med);
+       11:  216-block  0
+call    0 returned 11
+       11:  217:	service->repo->lista_med = ultima_lista;
+        -:  218:}
